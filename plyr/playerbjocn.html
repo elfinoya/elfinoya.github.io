@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="En-ENG">
+<html lang="zh-cn">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -46,7 +47,7 @@ document.getElementById('player').innerHTML='<video controls="controls" autoplay
 <script type="text/javascript" src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/hls.js/0.14.17/hls.min.js"></script>
 <script type="text/javascript" src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/dplayer/1.26.0/DPlayer.min.js"></script>
     <script>
-    var dp=new DPlayer({container: document.getElementById('player'),live: auto,autoplay: false,theme:"#FADFA3",loop:false,screenshot:true,hotkey:true, preload:"metadata", mutex:true,
+    var dp=new DPlayer({container: document.getElementById('player'),live: true,autoplay: true,theme:"#FADFA3",loop:false,screenshot:true,hotkey:true, preload:"metadata", mutex:true,
     video: {url: ""+id+"","name":" ",type: 'hls',referrerPolicy:"no-referrer"}
     }); 
     document.getElementById('player').oncontextmenu = function () {
@@ -58,4 +59,3 @@ document.getElementById('player').innerHTML='<video controls="controls" autoplay
     </script>
 </body>
 </html>
-
