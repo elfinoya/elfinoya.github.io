@@ -32,7 +32,10 @@ var player = new Clappr.Player(
 //"https://node1.olelive.com:6443/live/CCTV5HD/hls.m3u8",
 //"https://d25tgymtnqzu8s.cloudfront.net/smil:okey/manifest.mpd",
   "https://cors-proxy.elfsight.com/ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/wf8usag51e/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd",
-
+drm: {
+keyId: 'ae26845bd33038a9c0774a0981007294', 
+key: '63ac662dde310cfb4cc6f9b43b34196d',
+      },
 plugins:  [DashShakaPlayback, LevelSelector],
           shakaConfiguration: {
             preferredAudioLanguage: 'pt-BR',
@@ -43,11 +46,6 @@ plugins:  [DashShakaPlayback, LevelSelector],
           shakaOnBeforeLoad: function(shaka_player) {
             // shaka_player.getNetworkingEngine().registerRequestFilter() ...
           },
- drm: {
-keyId: 'ae26845bd33038a9c0774a0981007294', 
-key: '63ac662dde310cfb4cc6f9b43b34196d',
-      },                            									
-label: "0",
 
 poster: 'http://clappr.io/poster.png',
 watermark: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUobpcFwYvZIp9A6K1wX_-kfVf2U6Wv-lW1TaH4uMiWaEY3k0Q7kngsQ6nVHqDd8_L4AfUmfluEqtrhvA7PUqvX5oOJFj_nnZgY3dZfGrrFVk5nOV6EbI-M1VUhmTjbAxuY5Ze68Sg85zaLYmAt0WLVZecpuyEyGkwP0NChvZUBeOre2VzT6tLxI2Fn8WA/s1600/Bejo-TV.png',
