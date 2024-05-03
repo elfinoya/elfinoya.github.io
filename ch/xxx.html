@@ -25,18 +25,6 @@ return null==c?"/nature.mp4":unescape(c[1])}
 var link=get("src");
 var player = new Clappr.Player(
 {source:"https://d25tgymtnqzu8s.cloudfront.net/smil:okey/manifest.mpd",
-plugins: [LevelSelector],
-levelSelectorConfig: {
-    title: 'Quality',
-    labels: {
-        2: 'High', // 500kbps
-        1: 'Med', // 240kbps
-        0: 'Low', // 120kbps
-    },
-    labelCallback: function(playbackLevel, customLabel) {
-        return customLabel + playbackLevel.level.height+'p'; // High 720p
-    }
-  },
 plugins: [DashShakaPlayback],
           shakaConfiguration: {
             preferredAudioLanguage: 'pt-BR',
@@ -47,6 +35,7 @@ plugins: [DashShakaPlayback],
           shakaOnBeforeLoad: function(shaka_player) {
             // shaka_player.getNetworkingEngine().registerRequestFilter() ...
           },
+plugins: [LevelSelector],
 poster: 'http://clappr.io/poster.png',
 watermark: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUobpcFwYvZIp9A6K1wX_-kfVf2U6Wv-lW1TaH4uMiWaEY3k0Q7kngsQ6nVHqDd8_L4AfUmfluEqtrhvA7PUqvX5oOJFj_nnZgY3dZfGrrFVk5nOV6EbI-M1VUhmTjbAxuY5Ze68Sg85zaLYmAt0WLVZecpuyEyGkwP0NChvZUBeOre2VzT6tLxI2Fn8WA/s1600/Bejo-TV.png',
 autoPlay:false,
