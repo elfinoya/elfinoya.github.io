@@ -26,9 +26,10 @@ c=l.exec(window.location.href);
 return null==c?"/nature.mp4":unescape(c[1])}
 var link=get("src");
 var player = new Clappr.Player(
-{source:"https://d25tgymtnqzu8s.cloudfront.net/smil:okey/manifest.mpd",
-plugins: [LevelSelector],
-plugins: [DashShakaPlayback],
+{source:
+"https://d25tgymtnqzu8s.cloudfront.net/smil:okey/manifest.mpd",
+
+plugins:  [DashShakaPlayback, LevelSelector],
           shakaConfiguration: {
             preferredAudioLanguage: 'pt-BR',
             streaming: {
