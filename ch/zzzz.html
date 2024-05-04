@@ -1,22 +1,50 @@
-<head>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
-  <!--
-  THIS PLUGIN IS ALSO COMPATIBLE WITH CLAPPR-CORE
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/core@latest/dist/clappr-core.min.js"></script>
-  --->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/flv.js@latest/dist/flv.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr-flvjs-playback@latest/dist/clappr-flvjs-playback.min.js"></script>
-</head>
+<div id="player"></div><!--A #player element is added to the page to load the player. You can also change #player to another name.-->
+<script src="https://cdn.bootcss.com/clappr/0.2.95/clappr.plainhtml5.min.js"></script>
+
 <script>
-var player = new Clappr.Player({
-  source: "http://your.flv.video",
-  mimeType: 'https://pull-new.52bch.com/live/6816641_lhd.flv?auth_info=P3ikVFe4BEHxvRWCQ6JN7%2B1u%2BMRB7mZXCXedusEzjlyV8smEvs6znFr34Ee8My5Q.58487875703157476433565857675672',
-  plugins: [ FLVJSPlayback ],
-  playback: {
-    flvjsConfig: {
-      enableLogging: true, // default is "false"
-      // Params from flv.js
-    }
-  }
-});
- </script>
+    var player = new Clappr.Player({
+         width:,//Player width, numbers and percentages
+         height:,//Player height, number and percentage
+        source: "https://12a001a90a8c45927f7710a6ee02e8e6.v.smtcdns.net/play1nm.hnyongshun.cn/live/ballbar_27940.m3u8",//Playback source address, supports mp4, flv, m3u8, etc.
+        parentId: "#player",//Specify the associated player container, that is, the corresponding selector element, such as player
+        loop:true,//Whether to allow loop playback
+        mute:false,//Whether to allow mute when video playback starts
+        actualLiveTime:true,//Show actual playback time in progress bar
+        watermark:"https://jjjc.blonglee.me/front/res/static/img/logo.png",//Watermark image, you can add logo
+        position: ['300px', '300px', '300px', '300px'],//Watermark position, four directions: bottom-left, bottom-right, top-left and top-right
+        watermarkLink:"https://jjjc.blonglee.me",//Watermark link, support click to jump
+        audioOnly:false,//Play only sound audio
+        events: {
+            onReady: function() {
+//                alert('when the player is ready');
+            },
+            onResize: function() {
+//                alert('when player zooms');
+            },
+            onPlay: function() {
+//                alert('when playing');
+            },
+            onPause: function() {
+//                alert('when paused');
+            },
+            onStop: function() {
+//                alert('when playback stops');
+            },
+            onEnded: function() {
+//                alert('When playback ends');
+            },
+            onSeek: function() {
+//                alert('When looking for video progress');
+            },
+            onError: function() {
+//                alert('When playback goes wrong');
+            },
+            onTimeUpdate: function() {
+//                alert('When the play time is updated');
+            },
+            onVolumeUpdate: function() {
+//                alert('when the volume is updated');
+            },
+        }
+    });
+</script>
