@@ -66,6 +66,8 @@ font-family: Arial,Helvetica,sans-serif; font-size: 15px; font-weight: 701; colo
 <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js" type="text/javascript"></script>
 <script src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js" type="text/javascript"></script>
 <script src="https://raw.githack.com/elfinoya/assetbjo/main/clappr-responsive-container-plugin.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/flv.js@latest/dist/flv.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/clappr-flvjs-playback@latest/dist/clappr-flvjs-playback.min.js" type="text/javascript"></script>
 
 <script type='text/javascript'>
 //<![CDATA[
@@ -115,7 +117,7 @@ var player = new Clappr.Player(
 //key: '63ac662dde310cfb4cc6f9b43b34196d',
  //     },
 mimeType: 'application/x-mpegURL',
-plugins:  [DashShakaPlayback,ResponsiveContainer,LevelSelector ],
+plugins:  [DashShakaPlayback, FLVJSPlayback, ResponsiveContainer,LevelSelector ],
 // plugins: {
  //   container: [ResponsiveContainer],[DashShakaPlayback],[LevelSelector]
  // },
@@ -128,6 +130,12 @@ plugins:  [DashShakaPlayback,ResponsiveContainer,LevelSelector ],
           shakaOnBeforeLoad: function(shaka_player) {
             // shaka_player.getNetworkingEngine().registerRequestFilter() ...
           },
+         playback: {
+    flvjsConfig: {
+      enableLogging: true, // default is "false"
+      // Params from flv.js
+    }
+  },
 
 poster: 'http://clappr.io/poster.png',
 watermark: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUobpcFwYvZIp9A6K1wX_-kfVf2U6Wv-lW1TaH4uMiWaEY3k0Q7kngsQ6nVHqDd8_L4AfUmfluEqtrhvA7PUqvX5oOJFj_nnZgY3dZfGrrFVk5nOV6EbI-M1VUhmTjbAxuY5Ze68Sg85zaLYmAt0WLVZecpuyEyGkwP0NChvZUBeOre2VzT6tLxI2Fn8WA/s1600/Bejo-TV.png',
