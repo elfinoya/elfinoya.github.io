@@ -54,6 +54,9 @@ var player = new Clappr.Player(
 //key: '63ac662dde310cfb4cc6f9b43b34196d',
  //     },
 plugins:  [DashShakaPlayback, LevelSelector, ResponsiveContainer],
+ plugins: {
+    container: [ResponsiveContainer]
+  },
           shakaConfiguration: {
             preferredAudioLanguage: 'pt-BR',
             streaming: {
