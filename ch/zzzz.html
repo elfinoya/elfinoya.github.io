@@ -108,29 +108,17 @@ var link=get("src");
 var player = new Clappr.Player(
 {source:
 //"#",
-//"https://pull-new.52bch.com/live/6816641_lhd.flv?auth_info=P3ikVFe4BEHxvRWCQ6JN7%2B1u%2BMRB7mZXCXedusEzjlyV8smEvs6znFr34Ee8My5Q.58487875703157476433565857675672",
-"https://12a001a90a8c45927f7710a6ee02e8e6.v.smtcdns.net/play1nm.hnyongshun.cn/live/ballbar_27940.m3u8",
+"https://pull-new.52bch.com/live/6816641_lhd.flv?auth_info=P3ikVFe4BEHxvRWCQ6JN7%2B1u%2BMRB7mZXCXedusEzjlyV8smEvs6znFr34Ee8My5Q.58487875703157476433565857675672",
+//"https://12a001a90a8c45927f7710a6ee02e8e6.v.smtcdns.net/play1nm.hnyongshun.cn/live/ballbar_27940.m3u8",
 //"https://d25tgymtnqzu8s.cloudfront.net/smil:okey/manifest.mpd",
 //  "https://cors-proxy.elfsight.com/ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/wf8usag51e/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd",
 //drm: {
 //keyId: 'ae26845bd33038a9c0774a0981007294', 
 //key: '63ac662dde310cfb4cc6f9b43b34196d',
  //     },
-mimeType: 'application/x-mpegURL',
-plugins:  [DashShakaPlayback, ResponsiveContainer,LevelSelector ],
-// plugins: {
- //   container: [ResponsiveContainer],[DashShakaPlayback],[LevelSelector]
- // },
-          shakaConfiguration: {
-            preferredAudioLanguage: 'pt-BR',
-            streaming: {
-              rebufferingGoal: 15
-            }
-          },
-          shakaOnBeforeLoad: function(shaka_player) {
-            // shaka_player.getNetworkingEngine().registerRequestFilter() ...
-          },
-         playback: {
+mimeType: 'video/flv',
+  plugins: [ FLVJSPlayback ],
+  playback: {
     flvjsConfig: {
       enableLogging: true, // default is "false"
       // Params from flv.js
