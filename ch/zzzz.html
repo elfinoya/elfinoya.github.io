@@ -36,17 +36,7 @@
          width:"100vw",//Player width, numbers and percentages
          height:"100vh",//Player height, number and percentage
         source: "https://12a001a90a8c45927f7710a6ee02e8e6.v.smtcdns.net/play1nm.hnyongshun.cn/live/ballbar_27940.m3u8",//Playback source address, supports mp4, flv, m3u8, etc.
-        mimeType: 'application/x-mpegURL',
-        plugins:  [DashShakaPlayback,ResponsiveContainer,LevelSelector ],
-	shakaConfiguration: {
-        preferredAudioLanguage: 'pt-BR',
-            streaming: {
-              rebufferingGoal: 15
-            }
-          },
-          shakaOnBeforeLoad: function(shaka_player) {
-            // shaka_player.getNetworkingEngine().registerRequestFilter() ...
-          },
+       
         parentId: "#player",//Specify the associated player container, that is, the corresponding selector element, such as player
         loop:true,//Whether to allow loop playback
         mute:false,//Whether to allow mute when video playback starts
