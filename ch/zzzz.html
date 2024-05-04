@@ -3,7 +3,7 @@
 	<head>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<meta charset="utf-8">
-		<title>clappr播放器使用</title>
+		<title>clappr</title>
 	</head>
 	<body>
 		<div id="videoPlayer" style="height: 150px;"></div>
@@ -20,15 +20,8 @@
     var player = new Clappr.Player({
          width:"100vw",//Player width, numbers and percentages
          height:"100vh",//Player height, number and percentage
-        source: "https://pull-new.52bch.com/live/6816619_lhd.flv?auth_info=SeqqCrUlWasMkM5Udrt7LKlo9qW8VsSakM%2FhvITpqH0Pn7mX12c8Rbh8wvds7UOg.486e6e426941484f4b32514154716b7a",//Playback source address, supports mp4, flv, m3u8, etc.
-        mimeType: 'video/flv',
-        plugins: [ FLVJSPlayback ],
-        playback: {
-        flvjsConfig: {
-        enableLogging: true, // default is "false"
-      // Params from flv.js
-         }
-         },
+        source: "https://12a001a90a8c45927f7710a6ee02e8e6.v.smtcdns.net/play1nm.hnyongshun.cn/live/ballbar_27940.m3u8",//Playback source address, supports mp4, flv, m3u8, etc.
+        mimeType: 'video/m3u8',
         parentId: "#player",//Specify the associated player container, that is, the corresponding selector element, such as player
         loop:true,//Whether to allow loop playback
         mute:false,//Whether to allow mute when video playback starts
