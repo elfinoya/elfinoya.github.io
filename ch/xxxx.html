@@ -72,20 +72,14 @@ var player = new Clappr.Player(
 //"#",
 //"https://12a001a90a8c45927f7710a6ee02e8e6.v.smtcdns.net/play1nm.hnyongshun.cn/live/ballbar_27940.m3u8",
 //"https://d25tgymtnqzu8s.cloudfront.net/smil:okey/manifest.mpd",
-  "https://cors-proxy.elfsight.com/ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/wf8usag51e/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd",
-//drm: {
-//keyId: 'ae26845bd33038a9c0774a0981007294', 
-//key: '63ac662dde310cfb4cc6f9b43b34196d',
- //     },
+ "https://live.ll.ww.aiv-cdn.net/OTTB/lhr-nitro/live/clients/dash/enc/lsdasbvglv/out/v1/bb548a3626cd4708afbb94a58d71dce9/cenc.mpd",
+// "https://cors-proxy.elfsight.com/ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/wf8usag51e/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd",
 mimeType: 'application/x-mpegURL',
 plugins:  [DashShakaPlayback,ResponsiveContainer,LevelSelector ],
-// plugins: {
- //   container: [ResponsiveContainer],[DashShakaPlayback],[LevelSelector]
- // },
-          shakaConfiguration: {
+shakaConfiguration: {
             drm: {
       clearKeys: {
-        'ae26845bd33038a9c0774a0981007294': '63ac662dde310cfb4cc6f9b43b34196d'
+        '4e993aa8c1f295f8b94e8e9e6f6d0bfe': '86a1ed6e96caab8eb1009fe530d2cf4f'
                   }
                   },
             preferredAudioLanguage: 'pt-BR',
