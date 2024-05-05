@@ -1,0 +1,13 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+#container,
+video {
+  max-width: 640px;
+  min-height: 480px;
+}
