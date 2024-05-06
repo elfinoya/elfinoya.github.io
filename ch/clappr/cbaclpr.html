@@ -114,13 +114,17 @@ ConsoleBan.init({
     });
     var player = new Clappr.Player({
       source: 'https://node1.olelive.com:6443/live/CCTV5HD/hls.m3u8',
+      poster: '//i.imgur.com/0FlZDic.jpeg',
       autoPlay: true, // Set autoplay (with capital 'P')
       mute: false, // Set player to mute initially
       mimeType: 'application/x-mpegURL',
       height: '100%',
       width: '100%',
+      watermark: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUobpcFwYvZIp9A6K1wX_-kfVf2U6Wv-lW1TaH4uMiWaEY3k0Q7kngsQ6nVHqDd8_L4AfUmfluEqtrhvA7PUqvX5oOJFj_nnZgY3dZfGrrFVk5nOV6EbI-M1VUhmTjbAxuY5Ze68Sg85zaLYmAt0WLVZecpuyEyGkwP0NChvZUBeOre2VzT6tLxI2Fn8WA/s1600/Bejo-TV.png',
+      title: 'TNTSPO3',
     
       parentId: '#player',
+      mediacontrol: {seekbar: "#ff1d04", buttons: "#ff1d04"},
   });
   </script>
  <div class="overlay">
