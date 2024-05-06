@@ -73,6 +73,9 @@
       font-family: sans-serif;
       z-index: 2; /* Para estar delante del reproductor */
   }
+ .overlay a{ list-style-type:none; text-decoration:none;}
+.overlay h1 {position: absolute; bottom:0px; left:10%; z-index: 1;
+font-family: Arial,Helvetica,sans-serif; font-size: 15px; font-weight: 701; color: #0FFF00;}
 </style>
 
 
@@ -112,7 +115,7 @@ ConsoleBan.init({
     var player = new Clappr.Player({
       source: 'https://node1.olelive.com:6443/live/CCTV5HD/hls.m3u8',
       autoPlay: true, // Set autoplay (with capital 'P')
-      mute: true, // Set player to mute initially
+      mute: false, // Set player to mute initially
       mimeType: 'application/x-mpegURL',
       height: '100%',
       width: '100%',
@@ -120,6 +123,10 @@ ConsoleBan.init({
       parentId: '#player',
   });
   </script>
+ <div class="overlay">
+<a block="" href="https://s.id/bejotv" target="_blank">
+<h1>FOLLOW @BEJO TV</h1>
+</a></div>
 </div>
 
 
