@@ -117,10 +117,8 @@ ConsoleBan.init({
       source: 'https://node1.olelive.com:6443/live/CCTV5HD/hls.m3u8',
            // "https://live.ll.ww.aiv-cdn.net/OTTB/lhr-nitro/live/clients/dash/enc/wf8usag51e/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd",
       poster: '//i.imgur.com/0FlZDic.jpeg',
-      autoPlay: false, // Set autoplay (with capital 'P')
-      mute: true, // Set player to mute initially
       mimeType: 'application/x-mpegURL',
-      plugins:  [DashShakaPlayback,ResponsiveContainer,LevelSelector ],
+      plugins:  [DashShakaPlayback,LevelSelector ],
       shakaConfiguration: {
             drm: {
       clearKeys: {
@@ -139,7 +137,8 @@ ConsoleBan.init({
       width: '100%',
       watermark: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUobpcFwYvZIp9A6K1wX_-kfVf2U6Wv-lW1TaH4uMiWaEY3k0Q7kngsQ6nVHqDd8_L4AfUmfluEqtrhvA7PUqvX5oOJFj_nnZgY3dZfGrrFVk5nOV6EbI-M1VUhmTjbAxuY5Ze68Sg85zaLYmAt0WLVZecpuyEyGkwP0NChvZUBeOre2VzT6tLxI2Fn8WA/s1600/Bejo-TV.png',
       title: 'TNTSPO3',
-    
+      autoPlay: false, // Set autoplay (with capital 'P')
+      mute: false, // Set player to mute initiall
       parentId: '#player',
       mediacontrol: {seekbar: "#ff1d04", buttons: "#ff1d04"},
   });
