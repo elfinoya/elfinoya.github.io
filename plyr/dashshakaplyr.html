@@ -6,12 +6,6 @@
 }
   </style>
 
-<div class="container">
-	<video controls crossorigin playsinline poster="https://ia800603.us.archive.org/30/items/Tears-of-Steel/tos-poster.jpg"></video>
-</div>
-<!-- Plyr resources and browser polyfills are specified in the pen settings -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.4.0/shaka-player.compiled.js">
-
 document.addEventListener('DOMContentLoaded', () => {
 	const source = 'https://d25tgymtnqzu8s.cloudfront.net/smil:okey/manifest.mpd';
 	const video = document.querySelector('video');
@@ -30,3 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		console.warn('Browser is not supported!');
 	}
 });
+
+<div class="container">
+	<video controls crossorigin playsinline poster="https://ia800603.us.archive.org/30/items/Tears-of-Steel/tos-poster.jpg"></video>
+</div>
+<!-- Plyr resources and browser polyfills are specified in the pen settings -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.4.0/shaka-player.compiled.js">
+
+
