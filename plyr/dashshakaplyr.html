@@ -2,33 +2,45 @@
 .container {
 	margin: 20px auto;
 	width: 600px;
-	height: 268px;
+}
+video {
+	width: 100%;
 }
   </style>
 
-document.addEventListener('DOMContentLoaded', () => {
-	const source = 'https://d25tgymtnqzu8s.cloudfront.net/smil:okey/manifest.mpd';
-	const video = document.querySelector('video');
-	// For options (second argument) see: https://github.com/sampotts/plyr/#options
-	const player = new Plyr(video);
-	// Expose player so it can be used from the console
-	window.player = player;
-
-	// For more Shaka Player options, see: https://github.com/google/shaka-player
-	if (shaka.Player.isBrowserSupported()) {
-		// Install built-in polyfills
-		shaka.polyfill.installAll();
-		const shakaInstance = new shaka.Player(video);
-		shakaInstance.load(source);
-	} else {
-		console.warn('Browser is not supported!');
-	}
-});
-
 <div class="container">
-	<video controls crossorigin playsinline poster="https://ia800603.us.archive.org/30/items/Tears-of-Steel/tos-poster.jpg"></video>
+	<video controls crossorigin playsinline poster="https://bitdash-a.akamaihd.net/content/sintel/poster.png"></video>
 </div>
 <!-- Plyr resources and browser polyfills are specified in the pen settings -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.4.0/shaka-player.compiled.js">
+<!-- Hls.js 0.9.x and 0.10.x both have critical bugs affecting this demo. Using fixed git hash to when it was working (0.10.0 pre-release), until https://github.com/video-dev/hls.js/issues/1790 has been resolved -->
+<script src="https://cdn.rawgit.com/video-dev/hls.js/18bb552/dist/hls.min.js"></script>
+
+document.addEventListener('DOMContentLoaded', () => {
+	const source = 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8';
+	const video = document.querySelector('video');
+	
+	// For more options see: https://github.com/sampotts/plyr/#options
+	// captions.update is required for captions to work with hls.js
+	const player = new Plyr(video, {captions: {active: true, update: true, language: 'en'}});
+	
+	if (!Hls.isSupported()) {
+		video.src = source;
+	} else {
+		// For more Hls.js options, see https://github.com/dailymotion/hls.js
+		const hls = new Hls();
+		hls.loadSource(source);
+		hls.attachMedia(video);
+		window.hls = hls;
+		
+		// Handle changing captions
+		player.on('languagechange', () => {
+			// Caption support is still flaky. See: https://github.com/sampotts/plyr/issues/994
+			setTimeout(() => hls.subtitleTrack = player.currentTrack, 50);
+		});
+	}
+	
+	// Expose player so it can be used from the console
+	window.player = player;
+});
 
 
