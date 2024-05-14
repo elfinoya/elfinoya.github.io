@@ -1,4 +1,19 @@
- <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+ <!-- Javascript -->
+<!-- JAVASCRIPT -->
+<script src="https://nobargp.site/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- SLIDER -->
+<script src="https://nobargp.site/assets/libs/tiny-slider/min/tiny-slider.js"></script>
+<!-- Main Js -->
+<script src="https://nobargp.site/assets/libs/feather-icons/feather.min.js"></script>
+<script src="https://nobargp.site/assets/js/plugins.init.js"></script>
+<!--Note: All init js like tiny slider, counter, countdown, maintenance, lightbox, gallery, swiper slider, aos animation etc.-->
+<script src="https://nobargp.site/assets/js/app.js"></script>
+<script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<!--Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
+
+
+
+        <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
     <script>
         var lastStreamStatus = 'outsource';
         $(document).ready(function() {
@@ -18,7 +33,7 @@
             // console.log(lastStreamStatus);
             $('#loading-text').text('Loading Palyer, Mohon tunggu sebentar...');
             let vidsources = [];
-            let stream_detail_id = "eyJpdiI6IkVWSXR2amppQ0ZRQXZzOWprRmJ2dEE9PSIsInZhbHVlIjoiNU01a1c2bTVSZUpTNmdNbGptWDMrZz09IiwibWFjIjoiMTE2MGIxM2RkZDY1YWVkODA1OGQ3ODFmMGJhNmFmNzdlNWU0MWFmNGM3YTRiZTZlYWE3NDc2YTk4NTAwODk5OSIsInRhZyI6IiJ9";
+            let stream_detail_id = "eyJpdiI6IlZJWnFXdmZGUDQ4ZzVwaGh2TS9CL2c9PSIsInZhbHVlIjoiTVcvZ3laYkM0UXJrakFqektjeS9TZz09IiwibWFjIjoiYzc5M2U1YWJiMGFiMjIzNGFlYjk4OWQ3NTBjNDNlNmMxZGEyNTZhNWY5ZjQwZDE4YzZiMWFlMWZjNjU2Nzc5MiIsInRhZyI6IiJ9";
             $.ajax({
                 url: "https://nobargp.site/vid-res",
                 type: 'get',
@@ -119,7 +134,7 @@
                 data: {
                     _token: 'M8uP8LbTtZsxVOgUyEBhrnmLUA7mXMxK20HSpP7u',
                     message: message,
-                    stream_id: 'eyJpdiI6Im5GaDlNdEFQQXN4YkZhZnpMNmRBZkE9PSIsInZhbHVlIjoicjRwclQrWER0ZThxVnBwaE54UytiUT09IiwibWFjIjoiMTlmZjg0MzdiMDU3ZTYzMmI5YWJhYTE0YTFmYjQyNzVmNjY0MTZmODYxODgwZGZmMGZjZTAwZTMyMzBiNTY4MSIsInRhZyI6IiJ9',
+                    stream_id: 'eyJpdiI6IlZ4eVZLUFBYcEhLNDFLdE5MenNncWc9PSIsInZhbHVlIjoiN1NZdlZ5QWNKaS83TEpRY0RQaFl2dz09IiwibWFjIjoiODNlY2ZmMTA1NTM2NzA1NmFmOWYwMjczNmUzYjdkOWQ2NDMyZTNlMzMzNDZjMTNkNWI3M2I0NzYyMzVmMGIxMyIsInRhZyI6IiJ9',
                     user: JSON.parse(localStorage.getItem('users'))
                 }
             }).done(function(res) {
@@ -181,7 +196,7 @@
                 url: "https://nobargp.site/live-chat/get-message",
                 method: 'GET',
                 data: {
-                    stream_id: 'eyJpdiI6Ik50SkQ3N2VSaDc5ZCtZMTNVTXU0aEE9PSIsInZhbHVlIjoiUWRQQUllcXNNNTcwZnMybUdGUXkvUT09IiwibWFjIjoiNGEwZTA0NWQxMDk4NWQxN2EzNzAyZjg1YWZhYmZlMzI2ODdlMWI1ZjNmYzJhM2IzOGViMmEyNTNiNjMxMzFiMCIsInRhZyI6IiJ9',
+                    stream_id: 'eyJpdiI6Ik8yRHlmZVZwazg4OTRybXZPOG9xaEE9PSIsInZhbHVlIjoiS2FRNE9KZFZZU1liZFo2NFU3NzFjQT09IiwibWFjIjoiZGU0NzVjNTJmZjJkMWE4OWZkYWFjNGUyNThmNDc4YWM2M2NiNTMwNTNjMmQ5NDcxMzUyYzgwODAzMTY4M2ViZCIsInRhZyI6IiJ9',
                     user_id: JSON.parse(localStorage.getItem('users')).id,
                     page: page
                 }
@@ -209,7 +224,7 @@
                 url: "https://nobargp.site/live-chat/get-message",
                 method: 'GET',
                 data: {
-                    stream_id: 'eyJpdiI6Iiswd3AyckVHajlreFhQN05zVjZIVkE9PSIsInZhbHVlIjoiRDNJRkJLUGliYlZnLzdWdVd3SytEZz09IiwibWFjIjoiODk3YzAwNDk2N2Q4N2Y5NzNhODY3YTE2YzA4ZTJmMWY3YzYyNzhjMGMyNzExMzM3ZjZhZjVkMjc0ZmUyMGQ3MiIsInRhZyI6IiJ9',
+                    stream_id: 'eyJpdiI6ImpDNGlkV2RhWWUySTZWK3AvSWxRenc9PSIsInZhbHVlIjoiNTlpbnRqSG9teGVNQWYvMGtOWUdlUT09IiwibWFjIjoiNDFhMzZhY2Q1NzBiMzQzMDZiOTRjMDMyZWM3N2M0ZmYwMjAyZGNjNWM3ODJmODQ3MGZjYWUyNDJjNGNmYmUzOSIsInRhZyI6IiJ9',
                     user_id: JSON.parse(localStorage.getItem('users')).id,
                     page: page
                 }
