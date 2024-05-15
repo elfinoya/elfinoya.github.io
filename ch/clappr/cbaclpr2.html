@@ -1,0 +1,41 @@
+<div class='post-body entry-content' id='post-body-380524224148333206' itemprop='description articleBody'>
+<body>
+
+<script src="//tools.eti.pw/m3u8-player-online/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//tools.eti.pw/m3u8-player-online/clappr.min.js?ver=123"></script>
+<script src="//tools.eti.pw/m3u8-player-online/jquery.ba-throttle-debounce.min.js"></script>
+<script src="//tools.eti.pw/m3u8-player-online/jwplayer.js"></script>
+<script>
+$.ajaxSetup({
+cache: false
+});
+</script>
+
+<div id="jsonploader"></div>
+
+
+<div id='video_player1' style='width:100%; height:600px' title='M3U8 online player'></div>
+<script language='JavaScript'>
+player = new Clappr.Player(
+{
+	parentId: '#video_player1',
+	autoPlay: false,
+	height: '600px',
+	width: '100%',
+	mediacontrol:
+	{
+		seekbar: '#0AF2F2',
+		buttons: '#0AF2F2'
+	},
+	language: 'bg-BG',
+	strings: {
+		'bg-BG': {
+			'live': 'LIVE',
+			'back_to_live': 'назад',
+		}
+	},
+	source:'https://node1.olelive.com:6443/live/CCTV5PHD/hls.m3u8',
+});
+</script>
+	
+</body>
