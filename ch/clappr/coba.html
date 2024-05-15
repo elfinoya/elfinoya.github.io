@@ -1,51 +1,133 @@
-(function(){
-    //html源码
-    var html_source = `
-    <html>
-        <head>
-            <title>html加密</title>
-        </head>
-        <body>
-            <h2>DEMO</h2>
-            <p>html加密测试</p>
-            <a href="http://www.jshaman.com/">js混淆加密</a>
-        </body>
-    </html>
-    `;
-//html加密
-    var encode_html_source = "<!DOCTYPE html>\n" ;
-    encode_html_source += "<script>" + "document.write(unescape(\"" + escape(html_source) + "\"));\n" + "</script>";
-    //链接加密
-    var link_encode_code = `
-    function link_encode(){
-        //全局变量，存储全部链接的href
-        var pre_href=[];
-        //清空链接的href，使爬虫无法获取链接
-        var link = document.getElementsByTagName("a");
-        for(var i=0; i<link.length; i++){
-            console.log(i, link[i].href,"已加密此链接")
-            pre_href[i] = link[i].href;
-            link[i].href= ""
-            //添加新属性，存放id号，后续要根据id解密href
-            link[i].setAttribute("decode_id", i);
-            //获取之前的onfocus事件
-            var pre_onfocus = link[i].onfocus;
-            //注册click事件处理程序，即onfocus
-            link[i].addEventListener("focus",function(){
-                restore_href(this)
-                //如果之前有onfocus事件处理程序，则先执行
-                if(pre_onfocus!=undefined){
-                    pre_onfocus;
-                }
-            });
-        }
-        //还原href，使链接可打开
-        function restore_href(t){
-            t.href = pre_href[t.getAttribute("decode_id")];
-        }
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Webmaster Tools - HTML Encrypter</title>
+<meta name="keywords" content="" />
+<meta name="description" content="Webmasters Tookit has SEO Tools" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="wrapper">
+	<div id="wrapper2">
+		<div id="header">
+			<div id="logo">
+				<h1>Webmaster Tools - Webmasters Toolkit</h1>
+			</div>
+			<div id="menu">
+			<!-- Liner -->
+				</li>
+			</div>
+		</div>
+		<!-- end #header -->
+		<div id="page">
+			<div id="content">
+				<div class="post"><script language="JavaScript">
+function doencrypt(theform) {
+  if (theform.code.value == "") {
+    alert("No HTML code to encrypt");
+    return false;
+  } else {
+    enctext=encrypt(theform.code.value);
+    EncCode="<Script Language='Javascript'>\n";
+    EncCode+="<!-- HTML Encryption provided by tufat.com -->\n";
+    EncCode+="<!--\n";
+    EncCode+="document.write(unescape('"+enctext+"'));\n";
+    EncCode+="//-->\n";
+    EncCode+="</Script\>";
+    theform.ecode.value=EncCode;
+    theform.sac.disabled = false;
+  } return false;
+}
+
+function sandc(thisform) {
+  thisform.ecode.focus();
+  thisform.ecode.select();
+}
+
+function encrypt(tx) {
+  var hex='';
+  var i;
+  for (i=0; i<tx.length; i++) {
+    hex += '%'+hexfromdec(tx.charCodeAt(i))
+  }
+  return hex;
+}
+
+function hexfromdec(num) {
+  if (num > 65535) {
+    return ("err!")
+  }
+  first = Math.round(num/4096 - .5);
+  temp1 = num - first * 4096;
+  second = Math.round(temp1/256 -.5);
+  temp2 = temp1 - second * 256;
+  third = Math.round(temp2/16 - .5);
+  fourth = temp2 - third * 16;
+  return (""+getletter(third)+getletter(fourth));
+}
+
+function getletter(num) {
+  if (num < 10) {
+    return num;
+  } else {
+    if (num == 10) {
+      return "A"
     }
-    link_encode();
-    `;
-    encode_html_source += "<script>" + link_encode_code + "</script></html>";
-    console.log(encode_html_source);
-})()
+    if (num == 11) {
+      return "B"
+    }
+    if (num == 12) {
+      return "C"
+    }
+    if (num == 13) {
+      return "D"
+    }
+    if (num == 14) {
+      return "E"
+    }
+    if (num == 15) {
+      return "F"
+    }
+  }
+}
+
+</script>
+
+<h2 class="title">HTML Encrypter</h2>
+	<div class="entry">
+	<div class="box">
+
+
+
+			<form name="pageform" onSubmit="return doencrypt(this);">
+
+
+            <div  class="tooltop" style="height;76px;">
+
+            <div class="tcat">HTML Encryption</div>
+            <div style="height:28px;" class="alt1">1. Insert your HTML code you want to encrypt.<br>
+            2. Click 'Encrypt' and copy and paste the 'Encrypted HTML Code' to your website.</div>
+			<div style="line-height:20px;width:80%;">&nbsp;</div>
+            <div style="height:28px;" class="alt1">Insert your HTML code to encrypt:</div> </tr>
+            <div style="padding-left:10px;">
+            <textarea rows="11" name="code" cols="90"></textarea>
+            </div>
+			<div style="height:21px;" class="alt1">
+            <input type="submit" onClick="doencrypt(pageform);" value="Encrypt!" style="float: left"></div>
+			</div>
+            <div style="height:40px;">&nbsp;</div>
+			<div style="padding-left:10px;">
+            <textarea rows="11" readonly name="ecode" cols="90"></textarea></div>
+            <div class="alt1"> <input type="button" value="Select" onClick="sandc(pageform);" name="sac" disabled="true" style="float: left"></div>
+           </form>
+			<div class="clear"></div>
+	</div>
+
+
+</div>
+					<p class="meta">&nbsp;</p>
+				</div>
+
+			</div>
+			<!-- end #content -->
