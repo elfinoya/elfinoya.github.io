@@ -107,7 +107,7 @@ document.oncontextmenu = redirectKK;
 </div>
 <script>
 function get(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");
-var n="[\\?$]"+e+"=([^$#]*)",
+var n="[\\?$&]"+e+"=([^$#&]*)",
 l=new RegExp(n),
 c=l.exec(window.location.href);
 return null==c?"/nature.mp4":unescape(c[1])}
