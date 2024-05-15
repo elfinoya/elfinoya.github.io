@@ -112,8 +112,8 @@ l=new RegExp(n),
 c=l.exec(window.location.href);
 return null==c?"/nature.mp4":unescape(c[1])}
 var link=get("src");
-var keyId = getParameterByName("keyId");
-var key = getParameterByName("key");
+var keyId=get("keyId");
+var key=get("key");
        
 var player = new Clappr.Player(
 {source:link,
