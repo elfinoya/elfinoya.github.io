@@ -1,0 +1,51 @@
+(function(){
+    //html源码
+    var html_source = `
+    <html>
+        <head>
+            <title>html加密</title>
+        </head>
+        <body>
+            <h2>DEMO</h2>
+            <p>html加密测试</p>
+            <a href="http://www.jshaman.com/">js混淆加密</a>
+        </body>
+    </html>
+    `;
+//html加密
+    var encode_html_source = "<!DOCTYPE html>\n" ;
+    encode_html_source += "<script>" + "document.write(unescape(\"" + escape(html_source) + "\"));\n" + "</script>";
+    //链接加密
+    var link_encode_code = `
+    function link_encode(){
+        //全局变量，存储全部链接的href
+        var pre_href=[];
+        //清空链接的href，使爬虫无法获取链接
+        var link = document.getElementsByTagName("a");
+        for(var i=0; i<link.length; i++){
+            console.log(i, link[i].href,"已加密此链接")
+            pre_href[i] = link[i].href;
+            link[i].href= ""
+            //添加新属性，存放id号，后续要根据id解密href
+            link[i].setAttribute("decode_id", i);
+            //获取之前的onfocus事件
+            var pre_onfocus = link[i].onfocus;
+            //注册click事件处理程序，即onfocus
+            link[i].addEventListener("focus",function(){
+                restore_href(this)
+                //如果之前有onfocus事件处理程序，则先执行
+                if(pre_onfocus!=undefined){
+                    pre_onfocus;
+                }
+            });
+        }
+        //还原href，使链接可打开
+        function restore_href(t){
+            t.href = pre_href[t.getAttribute("decode_id")];
+        }
+    }
+    link_encode();
+    `;
+    encode_html_source += "<script>" + link_encode_code + "</script></html>";
+    console.log(encode_html_source);
+})()
