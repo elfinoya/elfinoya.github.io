@@ -80,6 +80,12 @@ font-family: Arial,Helvetica,sans-serif; font-size: 15px; font-weight: 701; colo
  <div id="player-container">
 <div id='video_player1' style='width:100vw; height:100vh' title='M3U8 online player'></div>
 <script language='JavaScript'>
+function get(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");
+var n="[\\?$]"+e+"=([^$#]*)",
+l=new RegExp(n),
+c=l.exec(window.location.href);
+return null==c?"/nature.mp4":unescape(c[1])}
+var link=get("src");
 player = new Clappr.Player(
 {
 	parentId: '#video_player1',
