@@ -112,9 +112,9 @@ l=new RegExp(n),
 c=l.exec(window.location.href);
 return null==c?"/nature.mp4":unescape(c[1])}
 var link=get("src");
-var keyId = getParameterByName('keyId');
-var key = getParameterByName('key');
-var urlP = getParameterByName('p');
+var keyId = getParameterByName("keyId");
+var key = getParameterByName("key");
+       
 var player = new Clappr.Player(
 {source:link,
 poster: '//i.imgur.com/j2qTmcp.jpg',
