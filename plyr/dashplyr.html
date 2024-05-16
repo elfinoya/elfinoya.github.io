@@ -28,6 +28,18 @@ body{margin: 0;padding: 0}#player{width: 100%;height: 100%;position: absolute;z-
 <style type="text/css">
 .overlay a{ list-style-type:none; text-decoration:none;}
 .overlay h1 {position: absolute; bottom:0px; left:10%; z-index: 1;
+ #player-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black; /* Fondo negro para el reproductor */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1; /* Para estar por encima del reproductor */
+  }
 </style>
   
  <script src="https://ssl.p.jwpcdn.com/player/v/8.28.1/jwpsrv.js"></script>
@@ -65,7 +77,7 @@ document.oncontextmenu = redirectKK;
 
 </head>
 <body onload="periksaDomain();">
-  
+<div id="player-container">  
 <script type="text/javascript">
         function getParameterByName(name) {
             name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
@@ -111,13 +123,13 @@ document.oncontextmenu = redirectKK;
 			
             //sharing: {}
         });
-
+    </script>
 <div class="overlay">
 <a block="" href="https://bit.ly/bejotv" target="_blank">
 <h1>FOLLOW @BEJO TV</h1>
 </a>
 </div>
-    </script>
+</div>
 
 
 
