@@ -70,7 +70,7 @@
 <script src="https://unpkg.com/videojs-logo@latest/dist/videojs-logo.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/videojs-logo@latest/dist/videojs-logo.css">
     
-<video id="video" class="video-js vjs-default-skin vjs-big-play-centered" poster="" controls preload="auto" playsinline  >
+<video id="video" class="video-js vjs-default-skin vjs-big-play-centered" poster="https://i.imgur.com/j2qTmcp.jpg" controls preload="auto" playsinline  >
 <source src="https://node1.olelive.com:6443/live/CCTV5HD/hls.m3u8" type="application/x-mpegURL">
 </video>
         
@@ -88,9 +88,11 @@
             });
 
             player.on("play", function() {
-                player.poster("https://i.imgur.com/j2qTmcp.jpg");  // Remove the poster image
-            player.watermark("https://raw.githubusercontent.com/elfinoya/assetbjo/main/Bejo-TVx.png");
+                player.poster("");  // Remove the poster image
             });
+           player.logo({
+                  image: 'https://raw.githubusercontent.com/elfinoya/assetbjo/main/Bejo-TVx.png''
+           });
 
     // Create a custom button by extending Video.js Button component using ES6 class syntax
     class SnapshotButton extends videojs.getComponent("Button") {
