@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en" style="height: 100%; overflow: hidden;"/>
+<head>
+  <title>node1.olelive.com - live streaming</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://anym3u8player.com/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+<link rel="stylesheet" href="https://anym3u8player.com/style/abdetectorpro.style.css" />
+
+        <style>
+                body {
+            background-color: black;
+        }
+        #video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            margin: auto;
+            max-height: 100%;
+            max-width: 100%;
+        }
+            #embed {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            margin: auto;
+            max-height: 100%;
+            max-width: 100%;
+        }
+            iframe {
+        display: none; 
+    }
+    </style>
+    
+
+  
+  </head>
+
+<!-- Matomo -->
+
+<!-- End Matomo Code -->
+  <body style="height: 100%; margin: 0; overflow: hidden;">
+
+
+<link href="https://vjs.zencdn.net/8.14.0/video-js.css" rel="stylesheet" /><script src="https://vjs.zencdn.net/8.14.0/video.js"></script><script src="https://cdn.jsdelivr.net/npm/videojs-contrib-hls.js@latest"></script><script src="https://cdn.jsdelivr.net/npm/videojs-logo@latest/dist/videojs-logo.min.js"></script><script src="https://cdn.jsdelivr.net/npm/videojs-watermark@2.0.0/dist/videojs-watermark.min.js"></script><link href="https://cdn.jsdelivr.net/npm/videojs-watermark@2.0.0/dist/videojs-watermark.min.css" rel="stylesheet" />
+            <video id="video" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" playsinline  >
+                <source src="https://node1.olelive.com:6443/live/CCTV5HD/hls.m3u8" type="application/x-mpegURL">
+            </video>
+        
+        <style>
+        .vjs-snapshot-button .vjs-icon-placeholder:before {
+            content: "\1F4F7"; /* Unicode character for camera, escaped for PHP */
+            font-family: "VideoJS", "VideoJS"; /* Ensures the unicode is rendered correctly */
+            font-size: 1.5em; /* Adjust size as needed */
+        }
+        </style>
+        <script>
+            var player = videojs("video", {
+                autoplay: false,
+                muted: false,
+            });
+
+            player.on("play", function() {
+                player.poster("");  // Remove the poster image
+            });
+
+    // Create a custom button by extending Video.js Button component using ES6 class syntax
+    class SnapshotButton extends videojs.getComponent("Button") {
+        constructor(player, options) {
+            super(player, options);
+            this.addClass("vjs-snapshot-button");
+            this.controlText("Snapshot");
+        }
+
+        handleClick() {
+            const videoElement = player.el().getElementsByTagName("video")[0];
+            const canvas = document.createElement("canvas");
+            canvas.width = videoElement.videoWidth;
+            canvas.height = videoElement.videoHeight;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+            const dataURI = canvas.toDataURL("image/jpeg");
+
+            // Trigger download
+            const link = document.createElement("a");
+            link.href = dataURI;
+            link.download = "snapshot.jpg";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    }
+
+    // Register the new component
+    videojs.registerComponent("SnapshotButton", SnapshotButton);
+
+    // Add the snapshot button to the control bar
+    player.ready(function() {
+        var controlBar = player.getChild("controlBar");
+        var PiPButtonIndex = controlBar.children().findIndex(child => child.name() === "PictureInPictureToggle");
+        controlBar.addChild("SnapshotButton", {}, PiPButtonIndex);
+                
+
+    });
+</script>
+        
+
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vedd3670a3b1c4e178fdfb0cc912d969e1713874337387" integrity="sha512-EzCudv2gYygrCcVhu65FkAxclf3mYM6BCwiGUm6BEuLzSb5ulVhgokzCZED7yMIkzYVg65mxfIBNdNra5ZFNyQ==" data-cf-beacon='{"rayId":"8858cd70bf560457","r":1,"version":"2024.4.1","token":"c74760c40c584b4780be35099c875a44"}' crossorigin="anonymous"></script>
+</body>
+</html>
