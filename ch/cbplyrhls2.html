@@ -84,11 +84,12 @@
         <script>
             var player = videojs("video", {
                 autoplay: false,
-                muted: false,
+                muted: true,
             });
 
             player.on("play", function() {
                 player.poster("");  // Remove the poster image
+                player.watermark();
             });
     // Create a custom button by extending Video.js Button component using ES6 class syntax
     class SnapshotButton extends videojs.getComponent("Button") {
