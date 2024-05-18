@@ -89,6 +89,10 @@
             });
             var player = videojs("video");
             player.watermark('https://raw.githubusercontent.com/elfinoya/assetbjo/main/Bejo-TVx.png');
+            var player = videojs('video');
+            player.logo({
+                   image: 'https://raw.githubusercontent.com/elfinoya/assetbjo/main/Bejo-TVx.png' 
+                         });
 
             player.on("play", function() {
                 player.poster("");  // Remove the poster image
