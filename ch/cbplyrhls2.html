@@ -85,8 +85,10 @@
             var player = videojs("video", {
                 autoplay: false,
                 muted: true,
-                player.watermark('https://raw.githubusercontent.com/elfinoya/assetbjo/main/Bejo-TVx.png');
+                
             });
+            var player = videojs("video");
+            player.watermark();
 
             player.on("play", function() {
                 player.poster("");  // Remove the poster image
