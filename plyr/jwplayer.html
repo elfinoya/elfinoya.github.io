@@ -244,65 +244,6 @@ jwplayer
   
 <div id="player"> </div>
 
-<script language="javascript">
-function dF(s){
-var s1=unescape(s.substr(0,s.length-1)); var t='';
-for(i=0;i<s1.length;i++)t+=String.fromCharCode(s1.charCodeAt(i)-s.substr(s.length-1,1));
-document.write(unescape(t));
-}
-</script><script language="javascript">
-var player = jwplayer("player");
-d = {}
-d.file = 'https://raw.githubusercontent.com/elfinoya/assetbjo/main/Bejo-TVx.png'
-d.margin = '0'
-d.position = 'bottom-right'
-var h = {};
-h.keyId = keyid;
-h.key = key;
-var b = {};
-b.clearkey = h;
-var H = {};
-H.default = false;
-H.type = "application/dash+xml";
-H.file = file;
-H.drm = b;
-H.label = "0";
-var s = {};
-s.image = "https://i.imgur.com/j2qTmcp.jpg";
-s.sources = [H];
-var E = {};
-E.file = "#";
-E.link = "#";
-E.position = "bottom-right";
-var S = {};
-S.color = "#FFF";
-S.fontSize = 15;
-S.backgroundOpacity = 0;
-S.edgeStyle = "raised";
-var Q = {};
-Q.playlist = [s];
-Q.width = "100%";
-Q.height = "100%";
-Q.aspectratio = "16:9";
-Q.stretching = "uniform";
-Q.stretching = "exactfit";
-Q.autostart = false;
-Q.mute = false;
-Q.logo = E;
-Q.captions = S;
-Q.cast = {};
-player.setup(Q);
-function toggleStretchingMode() {
-  player.setConfig({
-    stretching : player.getConfig().stretching === "uniform" ? "exactfit" : "uniform"
-  });
-}
-const stretchingButton = document.getElementById("stretching-button");
-stretchingButton.addEventListener("click", toggleStretchingMode);
-jwplayer().on("ready", function() {
-  player = jwplayer("player");
-});
-</script>  
 
  <!--jwphls-->
 <script>  
