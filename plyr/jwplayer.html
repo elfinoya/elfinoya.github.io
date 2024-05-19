@@ -303,6 +303,48 @@ jwplayer().on("ready", function() {
   player = jwplayer("player");
 });
 </script>  
+
+ <!--jwphls-->
+<script>  
+var playerInstance = jwplayer('player'),
+  d = {}
+d.file = 'https://raw.githubusercontent.com/elfinoya/assetbjo/main/Bejo-TVx.png'
+d.margin = '0'
+d.position = 'bottom-right'
+var M = {}
+M.kind = 'captions'
+M.file = getSUB
+M.label = 'bjotv'
+var w = {}
+w.logo = d
+w.image = 'https://i.imgur.com/j2qTmcp.jpg'
+w.stretching = 'uniform'
+w.title = 'BEJO TV'
+w.description = ''
+w.file = getURL
+w.type = 'hls'
+w.width = '100%'
+w.height = '100%'
+w.aspectratio = '16:9'
+w.stretching = 'uniform'
+w.stretching = 'exactfit'
+w.autostart = false
+w.mute = true
+w.cast = {}
+w.tracks = [M]
+playerInstance.setup(w)
+function toggleStretchingMode() {
+  player.setConfig({
+    stretching:
+      player.getConfig().stretching === 'uniform' ? 'exactfit' : 'uniform',
+  })
+}
+const stretchingButton = document.getElementById('stretching-button')
+stretchingButton.addEventListener('click', toggleStretchingMode)
+jwplayer().on('ready', function () {
+  player = jwplayer('player')
+})
+</script> 
   
 <script>
         function openNewLink() {
