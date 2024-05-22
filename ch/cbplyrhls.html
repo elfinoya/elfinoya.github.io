@@ -99,13 +99,13 @@ player = videojs('my-video', options);
 </body>
 </html> -->
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
    <title>Video.JS Play Video from a Particular Time</title>
 
-   <!-- Importing Video.js CSS / JS using CDN URL -->
-   <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
+   <!--Importing Video.js CSS / JS using CDN URL-->
+  <!-- <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
    <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
 </head>
 <body>
@@ -133,6 +133,33 @@ player = videojs('my-video', options);
       player.currentTime(30);
    </script>
 
+</body>
+</html>  -->
+
+
+<html>
+<head>
+   <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
+</head>
+<body>
+   <video
+      id="my-video"
+      class="video-js vjs-default-skin"
+      controls
+      preload="auto"
+      data-setup='{}'
+   >
+      <source
+         src="https://node1.olelive.com:6443/live/CCTV5HD/hls.m3u8"
+         type="application/x-mpegURL"
+      >
+   </video>
+ 
+   <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
+   <script>
+      var player = videojs('my-video', {
+         fluid: true
+   </script>
 </body>
 </html>
 
