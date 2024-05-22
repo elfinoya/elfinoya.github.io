@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
 <head>
    <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
    <link href="https://unpkg.com/@silvermine/videojs-quality-selector/dist/css/quality-selector.css" rel="stylesheet">
@@ -95,6 +95,42 @@ player = videojs('my-video', options);
    </script>
  
    
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Video.JS Play Video from a Particular Time</title>
+
+   <!-- Importing Video.js CSS / JS using CDN URL -->
+   <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
+   <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
+</head>
+<body>
+   <video id="my-video-player"
+      class="video-js vjs-default-skin vjs-big-play-centered"
+      controls="true"
+      muted="true"
+      autoplay="true"
+      preload="auto"
+      fluid="true"
+      poster="assets/sample.png"
+      data-setup='{}'
+      >
+      <source
+         src="https://node1.olelive.com:6443/live/CCTV5HD/hls.m3u8"
+         type="application/x-mpegURL"
+       >
+   </video>
+   <script>
+      // Initializing the video player
+      var player = videojs('my-video-player', {});
+
+      // starting a video from a particular time
+      player.currentTime(30);
+   </script>
 
 </body>
 </html>
