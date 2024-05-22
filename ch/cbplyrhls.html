@@ -147,6 +147,13 @@ player = videojs('my-video', options);
     position:fixed;
     width:100%;
     height:100px;
+    top: 0;
+    left: 0;
+    background-color: black; /* Fondo negro para el reproductor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Para estar por encima del reproductor */
 }
 
 .video-content {
