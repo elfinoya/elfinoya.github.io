@@ -142,6 +142,8 @@ player = videojs('my-video', options);
    <link href="https://raw.githack.com/elfinoya/assetbjo/main/videojs.min.css" rel="stylesheet" />
 </head>
 <body>
+   <div class="wrapper">
+ <div class="videocontent">
    <video
       id="my-video"
       class="video-js vjs-fluid vjs-default-skin"
@@ -161,7 +163,8 @@ player = videojs('my-video', options);
          type="application/x-mpegURL"
       >
    </video>
- 
+ </div>
+</div>
    <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
    <script>
       var player = videojs('my-video', {
@@ -170,6 +173,7 @@ player = videojs('my-video', options);
       player.aspectRatio('16:9');
       position:fixed;
    </script>
+    
 </body>
 </html>
 
