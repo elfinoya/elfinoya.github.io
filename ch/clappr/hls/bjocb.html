@@ -58,53 +58,7 @@ document.oncontextmenu = redirectKK;
 </head>
 <body>
 <!-- BEJO TV START -->
-<div id="player">
-</div>
-<script>
-function get(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");
-var n="[\\?$]"+e+"=([^$#]*)",
-l=new RegExp(n),
-c=l.exec(window.location.href);
-return null==c?"https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8":unescape(c[1])}
-var link=get("src");
-var player = new Clappr.Player(
-{source:
-//"#",
-"https://cors-proxy.elfsight.com/https://dsgtq5sngxkde.cloudfront.net/live/eds/rcti-spotv/sa_hls/rcti-spotv-avc1_2499968=4.m3u8",
-//"https://d25tgymtnqzu8s.cloudfront.net/smil:okey/manifest.mpd",
-// "https://live.ll.ww.aiv-cdn.net/OTTB/lhr-nitro/live/clients/dash/enc/wf8usag51e/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd",
-// "https://cors-proxy.elfsight.com/ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/wf8usag51e/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd",
-poster: "//i.imgur.com/0FlZDic.jpeg",
-mimeType: 'application/x-mpegURL',
-plugins:  [DashShakaPlayback,ResponsiveContainer,LevelSelector ],
-shakaConfiguration: {
-            drm: {
-      clearKeys: {
-        'ae26845bd33038a9c0774a0981007294': '63ac662dde310cfb4cc6f9b43b34196d'
-                  }
-                  },
-            preferredAudioLanguage: 'pt-BR',
-            streaming: {
-              rebufferingGoal: 15
-            }
-          },
-          shakaOnBeforeLoad: function(shaka_player) {
-            // shaka_player.getNetworkingEngine().registerRequestFilter() ...
-          },
-
-watermark: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUobpcFwYvZIp9A6K1wX_-kfVf2U6Wv-lW1TaH4uMiWaEY3k0Q7kngsQ6nVHqDd8_L4AfUmfluEqtrhvA7PUqvX5oOJFj_nnZgY3dZfGrrFVk5nOV6EbI-M1VUhmTjbAxuY5Ze68Sg85zaLYmAt0WLVZecpuyEyGkwP0NChvZUBeOre2VzT6tLxI2Fn8WA/s1600/Bejo-TV.png',
-title: 'TNTSPO3',
-autoPlay:false,
-height:"100%",
-width:"100%",
-
-parentId: "#player",
-mediacontrol: {seekbar: "#ff1d04", buttons: "#ff1d04"},
-});</script>
-<div class="overlay">
-<a block="" href="https://s.id/bejotv" target="_blank">
-<h1>FOLLOW @BEJO TV</h1>
-</a></div>
+Loco
 <!-- BEJO TV END -->
 
 <!--antiblockk-->
