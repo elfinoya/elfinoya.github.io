@@ -113,7 +113,7 @@ var n="[\\?$]"+e+"=([^$#]*)",
 l=new RegExp(n),
 c=l.exec(window.location.href);
 return null==c?"/nature.mp4":unescape(c[1])}
-var link=window.atob("src");
+var link= ""+atob(get);
 
 var player = new Clappr.Player(
 {source:link,
