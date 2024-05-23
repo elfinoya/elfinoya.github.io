@@ -29,11 +29,65 @@
 <link href="https://cdn.bootcdn.net/ajax/libs/shaka-player/4.3.5/controls.min.css" rel="stylesheet">
 <script src="https://cdn.bootcdn.net/ajax/libs/shaka-player/4.3.5/shaka-player.ui.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/shaka-player/4.3.5/shaka-player.ui.min.js"></script>
+  <style>
+  body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Para ocultar barras de desplazamiento */
+  }
+
+  #player-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black; /* Fondo negro para el reproductor */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1; /* Para estar por encima del reproductor */
+  }
+
+   #video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: fill;
+  position: cover;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+
+  #unmute-btn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      opacity: 0.8;
+      font-weight: 700;
+      font-family: sans-serif;
+      z-index: 2; /* Para estar delante del reproductor */
+  }
+ .overlay a{ list-style-type:none; text-decoration:none;}
+.overlay h1 {position: absolute; bottom:0px; left:10%; z-index: 1;
+font-family: Arial,Helvetica,sans-serif; font-size: 15px; font-weight: 701; color: #0FFF00;}
+</style>
 
 <style>
 .video-fill video {
-  object-fit: cover;
+  object-fit: fill;
 }</style>
+
+	<div id="player-container">
+	<div id="video">
 
 <script src="https://raw.githack.com/soponta/sharedtv/main/cdn/shaka.js"></script>
 <script src="https://raw.githack.com/soponta/sharedtv/main/cdn/players.js"></script>
@@ -45,5 +99,6 @@
 
 <script src="https://raw.githack.com/soponta/sharedtv/main/cdn/devtool.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	</div></div>
 
 </body></html>
