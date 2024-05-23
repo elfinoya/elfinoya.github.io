@@ -8,12 +8,58 @@
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Para ocultar barras de desplazamiento */
+  }
+
+  #player-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black; /* Fondo negro para el reproductor */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1; /* Para estar por encima del reproductor */
+  }
+
+  #player {
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 0; /* Atrás del botón */
+  }
+
+  #unmute-btn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      opacity: 0.8;
+      font-weight: 700;
+      font-family: sans-serif;
+      z-index: 2; /* Para estar delante del reproductor */
+  }
+ .overlay a{ list-style-type:none; text-decoration:none;}
+.overlay h1 {position: absolute; bottom:0px; left:10%; z-index: 1;
+font-family: Arial,Helvetica,sans-serif; font-size: 15px; font-weight: 701; color: #0FFF00;}
+</style>
+    
   <title>2 videos</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
  </head>
 <body class="bg-dark">
   
-          <div class="col-6 offset-3">
+          <div id="player-container">
             <video data-shaka-player class="teste" id="video" width="100%" height="100%"
               poster="//shaka-player-demo.appspot.com/assets/poster.jpg" autoplay>
               <!-- Try this first -->
