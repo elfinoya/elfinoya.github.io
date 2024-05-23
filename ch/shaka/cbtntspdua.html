@@ -1,0 +1,189 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <meta name="robots" content="noindex, nofollow">
+    <script crossorigin="anonymous" integrity="sha512-kUqYHGHL1bIN0/QSMxWrHtiPOHjqKU/Ma8OQqL24NkUdIxR7aJUdCruo000EMrtGCs+Fj/H+83C6ZRiYb6h6Jw==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.9/shaka-player.compiled.js"></script>
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.9/controls.min.css" integrity="sha512-4RC6gy+J9tI06Vqu8sntJdArqFk86ufXyDaDIzvAp/zMTcFzC0IQiH2iWOsL1i5/2+r6igS0xxtKCJZnPL2NTA==" referrerpolicy="no-referrer" rel="stylesheet">
+    <script crossorigin="anonymous" integrity="sha512-EezbE53RoqXpLWyvbZltTdw0nbx5m5DO08tcuczFaMrf6YFO7yGYQC4t97UrEuIlIFBboGMVqItYcy276V36gA==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.9/shaka-player.ui.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha512-fff1DEVD7o6E/NDWWL7Eb3SJtXbsZbneWE8Xlupt9gMz1Zbxt3elkICY3SXqVTjtXFeRl37U9mzBpRrQ4ZjjCQ==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.9/shaka-player.ui.debug.externs.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha512-T2BY2Xid7q4Nz7hI9XCGMyaHj+fwdzphsqwC/3GMZwEbY9+ITkevFtrrv+a4/mKZN0QyO6hFWllVFvbWM1znug==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.9/shaka-player.compiled.externs.min.js"></script>
+    <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/NaughtyJoker29/code/tele.css">
+    <style>
+      .password-toggler-button-parent {
+        position: relative;
+        overflow: visible;
+      }
+
+      .password-toggler-button {
+        top: 50%;
+        right: 8px;
+        position: absolute;
+        cursor: pointer;
+        transform: translateY(-50%);
+        background-size: cover;
+        z-index: 9999999;
+        background: #dcdcdc;
+        border-radius: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        box-sizing: border-box;
+      }
+
+      .password-toggler-show {
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0ZWQgYnkgSWNvTW9vbi5pbyAtLT4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE0IDE0Ij4KPHBhdGggZmlsbD0iIzc1NzU3NSIgZD0iTTcgMi42MjVjLTMuMDUzIDAtNS43IDEuNzc4LTcgNC4zNzUgMS4zIDIuNTk3IDMuOTQ3IDQuMzc1IDcgNC4zNzVzNS42OTktMS43NzggNy00LjM3NWMtMS4zLTIuNTk3LTMuOTQ3LTQuMzc1LTctNC4zNzV6TTEwLjQ1MSA0Ljk0NWMwLjgyMyAwLjUyNSAxLjUyIDEuMjI3IDIuMDQzIDIuMDU1LTAuNTI0IDAuODI3LTEuMjIxIDEuNTMtMi4wNDMgMi4wNTUtMS4wMzQgMC42NTktMi4yMjcgMS4wMDgtMy40NTEgMS4wMDhzLTIuNDE4LTAuMzQ4LTMuNDUxLTEuMDA4Yy0wLjgyMi0wLjUyNS0xLjUxOS0xLjIyNy0yLjA0My0yLjA1NSAwLjUyNC0wLjgyNyAxLjIyMS0xLjUzIDIuMDQzLTIuMDU1IDAuMDU0LTAuMDM0IDAuMTA4LTAuMDY3IDAuMTYyLTAuMS0wLjEzNiAwLjM3NC0wLjIxMSAwLjc3Ny0wLjIxMSAxLjE5OCAwIDEuOTMzIDEuNTY3IDMuNSAzLjUgMy41czMuNS0xLjU2NyAzLjUtMy41YzAtMC40MjEtMC4wNzUtMC44MjQtMC4yMTEtMS4xOTggMC4wNTQgMC4wMzMgMC4xMDkgMC4wNjYgMC4xNjIgMC4xdjB6TTcgNS42ODhjMCAwLjcyNS0wLjU4OCAxLjMxMy0xLjMxMyAxLjMxM3MtMS4zMTMtMC41ODgtMS4zMTMtMS4zMTMgMC41ODgtMS4zMTMgMS4zMTMtMS4zMTMgMS4zMTMgMC41ODggMS4zMTMgMS4zMTN6Ij48L3BhdGg+Cjwvc3ZnPgo=);
+      }
+
+      .password-toggler-hide {
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0ZWQgYnkgSWNvTW9vbi5pbyAtLT4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE0IDE0Ij4KPHBhdGggZmlsbD0iIzc1NzU3NSIgZD0iTTEyLjkzMyAwLjE5MmMtMC4yNTYtMC4yNTYtMC42NzItMC4yNTYtMC45MjggMGwtMi43NjQgMi43NjRjLTAuNzEtMC4yMTUtMS40NjItMC4zMzEtMi4yNDEtMC4zMzEtMy4wNTMgMC01LjcgMS43NzgtNyA0LjM3NSAwLjU2MiAxLjEyMyAxLjM3NiAyLjA5MiAyLjM2NiAyLjgzMWwtMi4xNzMgMi4xNzNjLTAuMjU2IDAuMjU2LTAuMjU2IDAuNjcyIDAgMC45MjggMC4xMjggMC4xMjggMC4yOTYgMC4xOTIgMC40NjQgMC4xOTJzMC4zMzYtMC4wNjQgMC40NjQtMC4xOTJsMTEuODEzLTExLjgxM2MwLjI1Ni0wLjI1NiAwLjI1Ni0wLjY3MiAwLTAuOTI4ek01LjY4OCA0LjM3NWMwLjU3OCAwIDEuMDY4IDAuMzczIDEuMjQzIDAuODkxbC0xLjY2NCAxLjY2NGMtMC41MTgtMC4xNzYtMC44OTEtMC42NjYtMC44OTEtMS4yNDMgMC0wLjcyNSAwLjU4OC0xLjMxMyAxLjMxMy0xLjMxM3pNMS41MDUgN2MwLjUyNC0wLjgyNyAxLjIyMS0xLjUzIDIuMDQzLTIuMDU1IDAuMDU0LTAuMDM0IDAuMTA4LTAuMDY3IDAuMTYyLTAuMS0wLjEzNiAwLjM3NC0wLjIxMSAwLjc3Ny0wLjIxMSAxLjE5OCAwIDAuNzUgMC4yMzYgMS40NDYgMC42MzggMi4wMTVsLTAuODMzIDAuODMzYy0wLjcxNy0wLjUwNC0xLjMyOS0xLjE0Ny0xLjgtMS44OTF6Ij48L3BhdGg+CjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Ik0xMC41IDYuMDQzYzAtMC4zNzEtMC4wNTgtMC43MjktMC4xNjUtMS4wNjVsLTQuNCA0LjRjMC4zMzYgMC4xMDcgMC42OTQgMC4xNjUgMS4wNjUgMC4xNjUgMS45MzMgMCAzLjUtMS41NjcgMy41LTMuNXoiPjwvcGF0aD4KPHBhdGggZmlsbD0iIzc1NzU3NSIgZD0iTTExLjM0OCAzLjk2NGwtMC45NDggMC45NDhjMC4wMTcgMC4wMTEgMC4wMzUgMC4wMjEgMC4wNTIgMC4wMzIgMC44MjMgMC41MjUgMS41MiAxLjIyNyAyLjA0MyAyLjA1NS0wLjUyNCAwLjgyNy0xLjIyMSAxLjUzLTIuMDQzIDIuMDU1LTEuMDM0IDAuNjU5LTIuMjI3IDEuMDA4LTMuNDUxIDEuMDA4LTAuNTI5IDAtMS4wNTEtMC4wNjUtMS41NTgtMC4xOTJsLTEuMDUxIDEuMDUxYzAuODE2IDAuMjkzIDEuNjk1IDAuNDUzIDIuNjA5IDAuNDUzIDMuMDUzIDAgNS42OTktMS43NzggNy00LjM3NS0wLjYxNi0xLjIyOS0xLjUzMy0yLjI3NS0yLjY1Mi0zLjAzNnoiPjwvcGF0aD4KPC9zdmc+Cg==);
+      }
+    </style>
+    <style type="text/css">
+      * {
+        <br>-webkit-user-select: text !important;
+        <br>-moz-user-select: text !important;
+        <br>-ms-user-select: text !important;
+        <br>user-select: text !important;
+        <br>
+      }
+    </style>
+    <style type="text/css">
+      * {
+        <br>-webkit-user-select: text !important;
+        <br>-moz-user-select: text !important;
+        <br>-ms-user-select: text !important;
+        <br>user-select: text !important;
+        <br>
+      }
+    </style>
+  </head>
+  <body bgcolor="black" style="margin:0">
+    <div class="xyz2">
+      <div data-shaka-player-container="" class="shaka-mobile shaka-video-container" shaka-controls="true" style="cursor: none;">
+        <video autoplay="" data-shaka-player="" id="tnt2a" poster="https://cdn.jsdelivr.net/gh/starballtv/img/background.jpg" style="width: 100vw; height: calc(var(--vh, 1vh) * 100);" __idm_id__="2195457" class="shaka-video" src="blob:https://starlive.pages.dev/3f7b0496-2de9-444c-aba3-8d39fefa582f"></video>
+        <canvas class="shaka-canvas-container"></canvas>
+        <div class="shaka-controls-container">
+          <div class="shaka-scrim-container"></div>
+          <div class="shaka-hidden-fast-forward-container">
+            <div class="shaka-fast-foward-container">
+              <span>0s</span>
+              <span class="shaka-forward-rewind-container-icon">fast_forward</span>
+            </div>
+          </div>
+          <div class="shaka-hidden-rewind-container">
+            <div class="shaka-rewind-container">
+              <span>0s</span>
+              <span class="shaka-forward-rewind-container-icon">fast_rewind</span>
+            </div>
+          </div>
+          <div class="shaka-server-side-ad-container"></div>
+          <div class="shaka-bottom-controls shaka-no-propagation">
+            <div class="shaka-ad-controls shaka-hidden">
+              <div class="shaka-ad-position shaka-hidden">
+                <span class="shaka-ad-position-span"></span>
+              </div>
+              <div class="shaka-ad-counter">
+                <span class="shaka-ad-counter-span"></span>
+              </div>
+            </div>
+            <div class="shaka-controls-button-panel shaka-show-controls-on-mouse-over">
+              <button type="button" class="shaka-small-play-button material-icons-round shaka-tooltip" aria-label="Pause" fdprocessedid="2vlnd5">pause</button>
+              <button type="button" class="shaka-mute-button material-icons-round shaka-tooltip" aria-label="Mute" fdprocessedid="tg4p8p">volume_up</button>
+              <div class="shaka-range-container shaka-volume-bar-container" style="background: linear-gradient(to right, rgb(255, 255, 255) 100%, rgba(255, 255, 255, 0.54) 100%, rgba(255, 255, 255, 0.54) 100%);">
+                <input class="shaka-range-element shaka-volume-bar" type="range" step="any" min="0" max="100" aria-label="Volume">
+              </div>
+              <button type="button" class="material-icons-round shaka-rewind-button shaka-tooltip-status" shaka-status="Off" aria-label="Rewind" fdprocessedid="9ody2">fast_rewind</button>
+              <button type="button" class="material-icons-round shaka-fast-forward-button shaka-tooltip-status" shaka-status="1x" aria-label="Fast-forward" fdprocessedid="7nzs6s">fast_forward</button>
+              <div class="shaka-spacer" aria-hidden="true"></div>
+              <button type="button" class="shaka-overflow-button shaka-language-button shaka-tooltip-status shaka-hidden" aria-label="Language" shaka-status="English">
+                <i class="material-icons-round">language</i>
+                <label class="shaka-overflow-button-label shaka-overflow-menu-only">
+                  <span>Language</span>
+                  <span class="shaka-current-selection-span">English</span>
+                </label>
+              </button>
+              <button type="button" class="shaka-overflow-button shaka-resolution-button shaka-tooltip-status" shaka-status="Auto" aria-label="Resolution" fdprocessedid="df7lan">
+                <i class="material-icons-round">settings</i>
+                <label class="shaka-overflow-button-label shaka-overflow-menu-only">
+                  <span>Resolution</span>
+                  <span class="shaka-current-selection-span">Auto</span>
+                </label>
+              </button>
+              <button type="button" class="shaka-fullscreen-button material-icons-round shaka-tooltip" aria-label="Full screen" fdprocessedid="hotgci">fullscreen</button>
+            </div>
+            <div class="shaka-range-container shaka-seek-bar-container" style="background: linear-gradient(to right, red 46.3614%, red 46.3614%, red 79.3403%, white 79.3403%, white 83.0175%, rgb(32, 178, 170) 83.0175%);">
+              <div class="shaka-ad-markers"></div>
+              <input class="shaka-range-element shaka-seek-bar shaka-no-propagation shaka-show-controls-on-mouse-over" type="range" step="any" min="8140158.383678436" max="8140266.383678436" aria-label="Seek">
+              <div id="shaka-player-ui-thumbnail-container" style="visibility: hidden;">
+                <img id="shaka-player-ui-thumbnail-image" draggable="false">
+                <div id="shaka-player-ui-thumbnail-time"></div>
+              </div>
+            </div>
+          </div>
+          <div class="shaka-no-propagation shaka-show-controls-on-mouse-over shaka-settings-menu shaka-hidden shaka-audio-languages">
+            <button type="button" class="shaka-back-to-overflow-button" aria-label="Back">
+              <i class="material-icons-round">close</i>
+              <span>Language</span>
+            </button>
+            <button type="button" aria-selected="true">
+              <span class="shaka-chosen-item">English</span>
+              <i class="material-icons-round shaka-chosen-item" aria-hidden="true">done</i>
+            </button>
+          </div>
+          <div class="shaka-no-propagation shaka-show-controls-on-mouse-over shaka-settings-menu shaka-hidden shaka-resolutions">
+            <button type="button" class="shaka-back-to-overflow-button" aria-label="Resolution">
+              <i class="material-icons-round">close</i>
+              <span>Resolution</span>
+            </button>
+            <button type="button" class="explicit-resolution">
+              <span>720p</span>
+            </button>
+            <button type="button" class="explicit-resolution">
+              <span>576p</span>
+            </button>
+            <button type="button" class="explicit-resolution">
+              <span>432p</span>
+            </button>
+            <button type="button" class="explicit-resolution">
+              <span>288p</span>
+            </button>
+            <button type="button" class="explicit-resolution">
+              <span>144p</span>
+            </button>
+            <button type="button" class="shaka-enable-abr-button" aria-selected="true">
+              <span class="shaka-auto-span shaka-chosen-item">Auto</span>
+              <i class="material-icons-round shaka-chosen-item" aria-hidden="true">done</i>
+            </button>
+          </div>
+        </div>
+        <div class="shaka-client-side-ad-container shaka-hidden"></div>
+        <div class="shaka-spinner-container shaka-hidden">
+          <div class="shaka-spinner">
+            <svg class="shaka-spinner-svg" viewBox="0 0 30 30">
+              <circle class="shaka-spinner-path" cx="15" cy="15" r="14.5" fill="none" stroke-width="1" stroke-miterlimit="10"></circle>
+            </svg>
+          </div>
+        </div>
+        <div class="shaka-text-container" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: flex-end;"></div>
+      </div>
+    </div>
+    <script src="1forsky.js"></script>
+    <div id="tme">
+      <div id="tme_message">
+        <button class="clossalert" onclick="document.getElementById(&quot;tme&quot;).style.display=&quot;none&quot;" fdprocessedid="g9kjb">X</button>
+        <strong>
+          <a href="https://t.me/bejotv" target="_blank">Gabung Telegram</a>
+        </strong>
+        <p>Untuk Pertandingan Lainnya <a href="https://t.me/bejotv" target="_blank">👉 Join Now</a>
+        </p>
+      </div>
+      <a href="https://t.me/bejotv" target="_blank">
+        <svg fill="rgb(255, 255, 255)" height="25" viewBox="0 0 33 33" width="25">
+          <path d="M27.1566711,3.01477064 C27.5924362,2.97926122 28.0620472,2.99321135 28.4483128,3.22233167 C28.7931173,3.42270627 28.9928078,3.82091907 29,4.2127909 C28.9860386,4.54505764 28.9610773,4.87647891 28.9314622,6.00747745 C28.7884635,6.88741129 28.4986585,8.55001316 28.2706222,10.2198015 C28.2126612,10.6691647 28.1411619,11.1164144 28.0730471,11.5645094 C27.7392425,13.7538344 27.3783613,15.938932 27.0136724,18.123607 C26.61683,20.4689197 26.2166029,22.8142325 25.8146836,25.1586998 C25.6979155,25.8283061 26.0393044,26.4133661 24.63981,26.7253417 C23.9823546,27.0791677 23.1370548,27.107068 22.4893301,26.7156189 C19.3458979,24.5871672 16.1800428,22.4904204 13.067495,20.3167365 C12.7709209,20.0707069 12.6004224,19.6864443 12.5902687,19.3034498 C12.5796919,18.9310236 12.7057676,18.5687429 12.8788045,18.2436626 C13.1246099,17.7875356 13.4774527,17.3982002 13.8717567,17.0655107 C15.3580121,15.608779 16.9293051,14.2433571 18.4578677,12.8318576 C19.4609737,11.9124172 20.4378492,10.9633857 21.3648021,9.96658545 C21.5188007,9.82581596 21.5653387,9.6110685 21.5996076,9.41407576 C21.6211843,9.29444282 21.5839539,9.13169131 21.4439167,9.10928655 C21.1934575,9.07884991 20.9607674,9.20820566 20.7390772,9.30670203 C20.1484673,9.61064577 19.5976263,9.98603109 19.0544006,10.3669119 C17.9654108,11.1202189 16.8844593,11.8857852 15.7997002,12.6450104 C13.566298,14.2036204 11.3159729,15.7470121 8.94549505,17.0925655 C8.29015502,17.4282141 7.54046972,17.5486925 6.80939963,17.5051512 C5.872293,17.4540007 4.96353226,17.1931756 4.07338673,16.9116366 C3.62916011,16.7700216 3.17774125,16.6470068 2.74789911,16.4643869 C1.99863688,16.1566386 1.21933647,15.9017317 0.527189087,15.4730822 C0.307614215,15.3238581 0.0643472572,15.1437746 0.00554011426,14.8694221 C-0.0405748395,14.567592 0.209884359,14.3279034 0.434113033,14.1693792 C0.977338727,13.8624763 1.53283354,13.5792464 2.08875142,13.2964392 C4.04419469,12.3220438 6.04532984,11.444031 8.04731114,10.5706684 C8.82872691,10.2312152 9.60464274,9.87950282 10.3919815,9.55442252 C12.9194195,8.49590356 15.4460112,7.43569368 17.9861414,6.4080341 C20.3625422,5.44336147 22.7461354,4.49602082 25.1415745,3.57953955 C25.7892992,3.31871439 26.4543699,3.07310755 27.1566711,3.01477064 Z"></path>
+        </svg>
+      </a>
+    </div>
+    
+  </body>
+</html>
