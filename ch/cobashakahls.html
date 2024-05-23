@@ -77,9 +77,9 @@ font-family: Arial,Helvetica,sans-serif; font-size: 15px; font-weight: 701; colo
             <video data-shaka-player class="teste" id="video" width="100%" height="100%"
               poster="//shaka-player-demo.appspot.com/assets/poster.jpg" >
               <!-- Try this first -->
-          <!-- <source src="https://d25tgymtnqzu8s.cloudfront.net/smil:okey/manifest.mpd" />
+          <source src="https://da-d436234320010b88000103020000000000000005.id.cdn.upcbroadband.com/wp/wp1-vxtoken-anp-g05060506-hzn-nl.t1.prd.dyncdn.dmdsdp.com/live/disk1/NL_000107_019441/_shared_05e8c13b39b3f30524c26012f903ed7f/NL_000107_019441.mpd" />
               <!-- Try this if the first one has failed -->
-              <source src="https://node1.olelive.com:6443/live/CCTV5HD/hls.m3u8" />
+             <!-- <source src="https://node1.olelive.com:6443/live/CCTV5HD/hls.m3u8" />  -->
             </video>
           </div>   
  
@@ -104,7 +104,13 @@ async function init() {
     }, 5500));
     console.log(stats); // Or format this into DOM, etc.
   }
-
+ player.configure({
+  drm: {
+    clearKeys: {
+      '3e999e38253834baa63881ea451f2839': '99b88d9cde1d8986decbc5985da87187'
+    }
+  }
+});
   controls.addEventListener('error', onPlayerErrorEvent);
 
 
