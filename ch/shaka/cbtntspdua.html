@@ -2,81 +2,25 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
-    <meta name="robots" content="noindex, nofollow">
-    <script crossorigin="anonymous" integrity="sha512-kUqYHGHL1bIN0/QSMxWrHtiPOHjqKU/Ma8OQqL24NkUdIxR7aJUdCruo000EMrtGCs+Fj/H+83C6ZRiYb6h6Jw==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.9/shaka-player.compiled.js"></script>
-    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.9/controls.min.css" integrity="sha512-4RC6gy+J9tI06Vqu8sntJdArqFk86ufXyDaDIzvAp/zMTcFzC0IQiH2iWOsL1i5/2+r6igS0xxtKCJZnPL2NTA==" referrerpolicy="no-referrer" rel="stylesheet">
-    <script crossorigin="anonymous" integrity="sha512-EezbE53RoqXpLWyvbZltTdw0nbx5m5DO08tcuczFaMrf6YFO7yGYQC4t97UrEuIlIFBboGMVqItYcy276V36gA==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.9/shaka-player.ui.min.js"></script>
-    <script crossorigin="anonymous" integrity="sha512-fff1DEVD7o6E/NDWWL7Eb3SJtXbsZbneWE8Xlupt9gMz1Zbxt3elkICY3SXqVTjtXFeRl37U9mzBpRrQ4ZjjCQ==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.9/shaka-player.ui.debug.externs.min.js"></script>
-    <script crossorigin="anonymous" integrity="sha512-T2BY2Xid7q4Nz7hI9XCGMyaHj+fwdzphsqwC/3GMZwEbY9+ITkevFtrrv+a4/mKZN0QyO6hFWllVFvbWM1znug==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.9/shaka-player.compiled.externs.min.js"></script>
-    <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/NaughtyJoker29/code/tele.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/shaka-player/4.3.3/shaka-player.compiled.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.8.5/shaka-player.ui.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.8.5/controls.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/soponta/sharedtv@main/youtube-shaka.css">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <style>
-      .password-toggler-button-parent {
-        position: relative;
-        overflow: visible;
-      }
-
-      .password-toggler-button {
-        top: 50%;
-        right: 8px;
-        position: absolute;
-        cursor: pointer;
-        transform: translateY(-50%);
-        background-size: cover;
-        z-index: 9999999;
-        background: #dcdcdc;
-        border-radius: 100%;
-        background-repeat: no-repeat;
-        background-position: center center;
-        box-sizing: border-box;
-      }
-
-      .password-toggler-show {
-        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0ZWQgYnkgSWNvTW9vbi5pbyAtLT4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE0IDE0Ij4KPHBhdGggZmlsbD0iIzc1NzU3NSIgZD0iTTcgMi42MjVjLTMuMDUzIDAtNS43IDEuNzc4LTcgNC4zNzUgMS4zIDIuNTk3IDMuOTQ3IDQuMzc1IDcgNC4zNzVzNS42OTktMS43NzggNy00LjM3NWMtMS4zLTIuNTk3LTMuOTQ3LTQuMzc1LTctNC4zNzV6TTEwLjQ1MSA0Ljk0NWMwLjgyMyAwLjUyNSAxLjUyIDEuMjI3IDIuMDQzIDIuMDU1LTAuNTI0IDAuODI3LTEuMjIxIDEuNTMtMi4wNDMgMi4wNTUtMS4wMzQgMC42NTktMi4yMjcgMS4wMDgtMy40NTEgMS4wMDhzLTIuNDE4LTAuMzQ4LTMuNDUxLTEuMDA4Yy0wLjgyMi0wLjUyNS0xLjUxOS0xLjIyNy0yLjA0My0yLjA1NSAwLjUyNC0wLjgyNyAxLjIyMS0xLjUzIDIuMDQzLTIuMDU1IDAuMDU0LTAuMDM0IDAuMTA4LTAuMDY3IDAuMTYyLTAuMS0wLjEzNiAwLjM3NC0wLjIxMSAwLjc3Ny0wLjIxMSAxLjE5OCAwIDEuOTMzIDEuNTY3IDMuNSAzLjUgMy41czMuNS0xLjU2NyAzLjUtMy41YzAtMC40MjEtMC4wNzUtMC44MjQtMC4yMTEtMS4xOTggMC4wNTQgMC4wMzMgMC4xMDkgMC4wNjYgMC4xNjIgMC4xdjB6TTcgNS42ODhjMCAwLjcyNS0wLjU4OCAxLjMxMy0xLjMxMyAxLjMxM3MtMS4zMTMtMC41ODgtMS4zMTMtMS4zMTMgMC41ODgtMS4zMTMgMS4zMTMtMS4zMTMgMS4zMTMgMC41ODggMS4zMTMgMS4zMTN6Ij48L3BhdGg+Cjwvc3ZnPgo=);
-      }
-
-      .password-toggler-hide {
-        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0ZWQgYnkgSWNvTW9vbi5pbyAtLT4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE0IDE0Ij4KPHBhdGggZmlsbD0iIzc1NzU3NSIgZD0iTTEyLjkzMyAwLjE5MmMtMC4yNTYtMC4yNTYtMC42NzItMC4yNTYtMC45MjggMGwtMi43NjQgMi43NjRjLTAuNzEtMC4yMTUtMS40NjItMC4zMzEtMi4yNDEtMC4zMzEtMy4wNTMgMC01LjcgMS43NzgtNyA0LjM3NSAwLjU2MiAxLjEyMyAxLjM3NiAyLjA5MiAyLjM2NiAyLjgzMWwtMi4xNzMgMi4xNzNjLTAuMjU2IDAuMjU2LTAuMjU2IDAuNjcyIDAgMC45MjggMC4xMjggMC4xMjggMC4yOTYgMC4xOTIgMC40NjQgMC4xOTJzMC4zMzYtMC4wNjQgMC40NjQtMC4xOTJsMTEuODEzLTExLjgxM2MwLjI1Ni0wLjI1NiAwLjI1Ni0wLjY3MiAwLTAuOTI4ek01LjY4OCA0LjM3NWMwLjU3OCAwIDEuMDY4IDAuMzczIDEuMjQzIDAuODkxbC0xLjY2NCAxLjY2NGMtMC41MTgtMC4xNzYtMC44OTEtMC42NjYtMC44OTEtMS4yNDMgMC0wLjcyNSAwLjU4OC0xLjMxMyAxLjMxMy0xLjMxM3pNMS41MDUgN2MwLjUyNC0wLjgyNyAxLjIyMS0xLjUzIDIuMDQzLTIuMDU1IDAuMDU0LTAuMDM0IDAuMTA4LTAuMDY3IDAuMTYyLTAuMS0wLjEzNiAwLjM3NC0wLjIxMSAwLjc3Ny0wLjIxMSAxLjE5OCAwIDAuNzUgMC4yMzYgMS40NDYgMC42MzggMi4wMTVsLTAuODMzIDAuODMzYy0wLjcxNy0wLjUwNC0xLjMyOS0xLjE0Ny0xLjgtMS44OTF6Ij48L3BhdGg+CjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Ik0xMC41IDYuMDQzYzAtMC4zNzEtMC4wNTgtMC43MjktMC4xNjUtMS4wNjVsLTQuNCA0LjRjMC4zMzYgMC4xMDcgMC42OTQgMC4xNjUgMS4wNjUgMC4xNjUgMS45MzMgMCAzLjUtMS41NjcgMy41LTMuNXoiPjwvcGF0aD4KPHBhdGggZmlsbD0iIzc1NzU3NSIgZD0iTTExLjM0OCAzLjk2NGwtMC45NDggMC45NDhjMC4wMTcgMC4wMTEgMC4wMzUgMC4wMjEgMC4wNTIgMC4wMzIgMC44MjMgMC41MjUgMS41MiAxLjIyNyAyLjA0MyAyLjA1NS0wLjUyNCAwLjgyNy0xLjIyMSAxLjUzLTIuMDQzIDIuMDU1LTEuMDM0IDAuNjU5LTIuMjI3IDEuMDA4LTMuNDUxIDEuMDA4LTAuNTI5IDAtMS4wNTEtMC4wNjUtMS41NTgtMC4xOTJsLTEuMDUxIDEuMDUxYzAuODE2IDAuMjkzIDEuNjk1IDAuNDUzIDIuNjA5IDAuNDUzIDMuMDUzIDAgNS42OTktMS43NzggNy00LjM3NS0wLjYxNi0xLjIyOS0xLjUzMy0yLjI3NS0yLjY1Mi0zLjAzNnoiPjwvcGF0aD4KPC9zdmc+Cg==);
-      }
+      @import "https://fonts.googleapis.com/css?family=Play:300,400,700";
+      @import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700";
+      @import "https://fonts.googleapis.com/css?family=Monda:300,400,700";
     </style>
-    <style type="text/css">
-      * {
-        <br>-webkit-user-select: text !important;
-        <br>-moz-user-select: text !important;
-        <br>-ms-user-select: text !important;
-        <br>user-select: text !important;
-        <br>
-      }
-    </style>
-    <style type="text/css">
-      * {
-        <br>-webkit-user-select: text !important;
-        <br>-moz-user-select: text !important;
-        <br>-ms-user-select: text !important;
-        <br>user-select: text !important;
-        <br>
-      }
-    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   </head>
   <body bgcolor="black" style="margin:0">
-    <div class="xyz2">
+    <div class="youtube-theme">
       <div data-shaka-player-container="" class="shaka-mobile shaka-video-container" shaka-controls="true" style="cursor: none;">
-        <video autoplay="" data-shaka-player="" id="tnt2a" poster="https://cdn.jsdelivr.net/gh/starballtv/img/background.jpg" style="width: 100vw; height: calc(var(--vh, 1vh) * 100);" __idm_id__="2195457" class="shaka-video" src="blob:https://starlive.pages.dev/3f7b0496-2de9-444c-aba3-8d39fefa582f"></video>
-        <canvas class="shaka-canvas-container"></canvas>
-        <div class="shaka-controls-container">
+        <video autoplay="" autostart="true" data-shaka-player="" poster="//i.imgur.com/j2qTmcp.jpg" id="youtube-theme" style="width: 100vw; height: calc(var(--vh, 1vh) * 100);" class="shaka-video"></video>
+        <div class="shaka-controls-container" shown="true">
           <div class="shaka-scrim-container"></div>
-          <div class="shaka-hidden-fast-forward-container">
-            <div class="shaka-fast-foward-container">
-              <span>0s</span>
-              <span class="shaka-forward-rewind-container-icon">fast_forward</span>
-            </div>
-          </div>
-          <div class="shaka-hidden-rewind-container">
-            <div class="shaka-rewind-container">
-              <span>0s</span>
-              <span class="shaka-forward-rewind-container-icon">fast_rewind</span>
-            </div>
-          </div>
           <div class="shaka-server-side-ad-container"></div>
           <div class="shaka-bottom-controls shaka-no-propagation">
             <div class="shaka-ad-controls shaka-hidden">
@@ -88,72 +32,116 @@
               </div>
             </div>
             <div class="shaka-controls-button-panel shaka-show-controls-on-mouse-over">
-              <button type="button" class="shaka-small-play-button material-icons-round shaka-tooltip" aria-label="Pause" fdprocessedid="2vlnd5">pause</button>
-              <button type="button" class="shaka-mute-button material-icons-round shaka-tooltip" aria-label="Mute" fdprocessedid="tg4p8p">volume_up</button>
-              <div class="shaka-range-container shaka-volume-bar-container" style="background: linear-gradient(to right, rgb(255, 255, 255) 100%, rgba(255, 255, 255, 0.54) 100%, rgba(255, 255, 255, 0.54) 100%);">
-                <input class="shaka-range-element shaka-volume-bar" type="range" step="any" min="0" max="100" aria-label="Volume">
-              </div>
-              <button type="button" class="material-icons-round shaka-rewind-button shaka-tooltip-status" shaka-status="Off" aria-label="Rewind" fdprocessedid="9ody2">fast_rewind</button>
-              <button type="button" class="material-icons-round shaka-fast-forward-button shaka-tooltip-status" shaka-status="1x" aria-label="Fast-forward" fdprocessedid="7nzs6s">fast_forward</button>
+              <button class="shaka-small-play-button material-icons-round shaka-tooltip" aria-label="Play">play_arrow</button>
+              <button class="shaka-current-time" disabled="">0:00</button>
               <div class="shaka-spacer" aria-hidden="true"></div>
-              <button type="button" class="shaka-overflow-button shaka-language-button shaka-tooltip-status shaka-hidden" aria-label="Language" shaka-status="English">
-                <i class="material-icons-round">language</i>
-                <label class="shaka-overflow-button-label shaka-overflow-menu-only">
-                  <span>Language</span>
-                  <span class="shaka-current-selection-span">English</span>
-                </label>
-              </button>
-              <button type="button" class="shaka-overflow-button shaka-resolution-button shaka-tooltip-status" shaka-status="Auto" aria-label="Resolution" fdprocessedid="df7lan">
-                <i class="material-icons-round">settings</i>
-                <label class="shaka-overflow-button-label shaka-overflow-menu-only">
-                  <span>Resolution</span>
-                  <span class="shaka-current-selection-span">Auto</span>
-                </label>
-              </button>
-              <button type="button" class="shaka-fullscreen-button material-icons-round shaka-tooltip" aria-label="Full screen" fdprocessedid="hotgci">fullscreen</button>
-            </div>
-            <div class="shaka-range-container shaka-seek-bar-container" style="background: linear-gradient(to right, red 46.3614%, red 46.3614%, red 79.3403%, white 79.3403%, white 83.0175%, rgb(32, 178, 170) 83.0175%);">
-              <div class="shaka-ad-markers"></div>
-              <input class="shaka-range-element shaka-seek-bar shaka-no-propagation shaka-show-controls-on-mouse-over" type="range" step="any" min="8140158.383678436" max="8140266.383678436" aria-label="Seek">
-              <div id="shaka-player-ui-thumbnail-container" style="visibility: hidden;">
-                <img id="shaka-player-ui-thumbnail-image" draggable="false">
-                <div id="shaka-player-ui-thumbnail-time"></div>
+              <button class="shaka-mute-button material-icons-round shaka-tooltip" aria-label="Mute">volume_up</button>
+              <div class="shaka-range-container shaka-volume-bar-container" style="background: linear-gradient(to right, rgb(255, 255, 255) 100%, rgba(255, 255, 255, 0.54) 100%, rgba(255, 255, 255, 0.54) 100%);">
+                <input class="shaka-range-element shaka-volume-bar" type="range" step="any" min="0" max="1" aria-label="Volume">
               </div>
+              <button class="shaka-fullscreen-button material-icons-round shaka-tooltip" aria-label="Full screen">fullscreen</button>
+              <button class="shaka-overflow-menu-button shaka-no-propagation material-icons-round shaka-tooltip" aria-label="More settings">settings</button>
+            </div>
+            <div class="shaka-range-container shaka-seek-bar-container" style="background: rgba(255, 255, 255, 0.2);">
+              <div class="shaka-ad-markers" style="background: transparent;"></div>
+              <input class="shaka-range-element shaka-seek-bar shaka-no-propagation shaka-show-controls-on-mouse-over" type="range" step="any" min="0" max="0" aria-label="Seek">
             </div>
           </div>
-          <div class="shaka-no-propagation shaka-show-controls-on-mouse-over shaka-settings-menu shaka-hidden shaka-audio-languages">
-            <button type="button" class="shaka-back-to-overflow-button" aria-label="Back">
-              <i class="material-icons-round">close</i>
-              <span>Language</span>
+          <div class="shaka-overflow-menu shaka-no-propagation shaka-show-controls-on-mouse-over shaka-hidden">
+            <button class="shaka-overflow-button shaka-caption-button shaka-tooltip-status shaka-hidden" aria-pressed="false" aria-label="Captions" shaka-status="Off">
+              <i class="material-icons-round">closed_caption</i>
+              <label class="shaka-overflow-button-label shaka-overflow-menu-only">
+                <span>Captions</span>
+                <span class="shaka-current-selection-span">Off</span>
+              </label>
             </button>
-            <button type="button" aria-selected="true">
-              <span class="shaka-chosen-item">English</span>
+            <button class="shaka-overflow-button shaka-resolution-button shaka-tooltip-status" shaka-status="Auto" aria-label="Resolution">
+              <i class="material-icons-round">settings</i>
+              <label class="shaka-overflow-button-label shaka-overflow-menu-only">
+                <span>Resolution</span>
+                <span class="shaka-current-selection-span">Auto</span>
+              </label>
+            </button>
+            <button class="shaka-overflow-button shaka-language-button shaka-tooltip-status" aria-label="Language" shaka-status="">
+              <i class="material-icons-round">language</i>
+              <label class="shaka-overflow-button-label shaka-overflow-menu-only">
+                <span>Language</span>
+                <span class="shaka-current-selection-span"></span>
+              </label>
+            </button>
+            <button class="shaka-pip-button shaka-tooltip" aria-label="Enter Picture-in-Picture">
+              <i class="material-icons-round">picture_in_picture_alt</i>
+              <label class="shaka-overflow-button-label shaka-overflow-menu-only">
+                <span>Picture-in-Picture</span>
+                <span class="shaka-current-selection-span">Off</span>
+              </label>
+            </button>
+            <button class="shaka-cast-button shaka-tooltip shaka-hidden" aria-pressed="false" aria-label="Cast...">
+              <i class="material-icons-round">cast</i>
+              <label class="shaka-overflow-button-label shaka-overflow-menu-only">
+                <span>Cast...</span>
+                <span class="shaka-current-selection-span">Off</span>
+              </label>
+            </button>
+            <button class="shaka-overflow-button shaka-playbackrate-button shaka-tooltip-status" aria-label="Playback speed" shaka-status="0x">
+              <i class="material-icons-round">slow_motion_video</i>
+              <label class="shaka-overflow-button-label shaka-overflow-menu-only">
+                <span>Playback speed</span>
+                <span class="shaka-current-selection-span">0x</span>
+              </label>
+            </button>
+          </div>
+          <div class="shaka-no-propagation shaka-show-controls-on-mouse-over shaka-settings-menu shaka-hidden shaka-text-languages">
+            <button class="shaka-back-to-overflow-button" aria-label="Back">
+              <i class="material-icons-round">arrow_back_ios_new</i>
+              <span>Captions</span>
+            </button>
+            <button class="shaka-turn-captions-off-button" aria-selected="true">
+              <span class="shaka-auto-span shaka-chosen-item">Off</span>
               <i class="material-icons-round shaka-chosen-item" aria-hidden="true">done</i>
             </button>
           </div>
           <div class="shaka-no-propagation shaka-show-controls-on-mouse-over shaka-settings-menu shaka-hidden shaka-resolutions">
-            <button type="button" class="shaka-back-to-overflow-button" aria-label="Resolution">
-              <i class="material-icons-round">close</i>
+            <button class="shaka-back-to-overflow-button" aria-label="Resolution">
+              <i class="material-icons-round">arrow_back_ios_new</i>
               <span>Resolution</span>
             </button>
-            <button type="button" class="explicit-resolution">
-              <span>720p</span>
-            </button>
-            <button type="button" class="explicit-resolution">
-              <span>576p</span>
-            </button>
-            <button type="button" class="explicit-resolution">
-              <span>432p</span>
-            </button>
-            <button type="button" class="explicit-resolution">
-              <span>288p</span>
-            </button>
-            <button type="button" class="explicit-resolution">
-              <span>144p</span>
-            </button>
-            <button type="button" class="shaka-enable-abr-button" aria-selected="true">
+            <button class="shaka-enable-abr-button" aria-selected="true">
               <span class="shaka-auto-span shaka-chosen-item">Auto</span>
               <i class="material-icons-round shaka-chosen-item" aria-hidden="true">done</i>
+            </button>
+          </div>
+          <div class="shaka-no-propagation shaka-show-controls-on-mouse-over shaka-settings-menu shaka-hidden shaka-audio-languages">
+            <button class="shaka-back-to-overflow-button" aria-label="Back">
+              <i class="material-icons-round">arrow_back_ios_new</i>
+              <span>Language</span>
+            </button>
+          </div>
+          <div class="shaka-no-propagation shaka-show-controls-on-mouse-over shaka-settings-menu shaka-hidden shaka-playback-rates">
+            <button class="shaka-back-to-overflow-button" aria-label="Back">
+              <i class="material-icons-round">arrow_back_ios_new</i>
+              <span>Playback speed</span>
+            </button>
+            <button>
+              <span>0.5x</span>
+            </button>
+            <button>
+              <span>0.75x</span>
+            </button>
+            <button>
+              <span>1x</span>
+            </button>
+            <button>
+              <span>1.25x</span>
+            </button>
+            <button>
+              <span>1.5x</span>
+            </button>
+            <button>
+              <span>1.75x</span>
+            </button>
+            <button>
+              <span>2x</span>
             </button>
           </div>
         </div>
@@ -231,7 +219,7 @@
       // to load (e.g. due to lack of browser support).
       document.addEventListener('shaka-ui-load-failed', initFailed);
     </script>
-    <div id="tme">
+	<div id="tme">
       <div id="tme_message">
         <button class="clossalert" onclick="document.getElementById(&quot;tme&quot;).style.display=&quot;none&quot;" fdprocessedid="g9kjb">X</button>
         <strong>
@@ -246,6 +234,6 @@
         </svg>
       </a>
     </div>
-    
+	
   </body>
 </html>
