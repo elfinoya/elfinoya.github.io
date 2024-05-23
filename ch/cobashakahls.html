@@ -147,13 +147,7 @@ function onUIErrorEvent(errorEvent) {
   // Extract the shaka.util.Error object from the event.
   onPlayerError(event.detail);
 }
-private initPlayer() {
-    shaka.media.ManifestParser.registerParserByExtension("m3u8", shaka.hls.HlsParser);
-    shaka.media.ManifestParser.registerParserByMime("Application/vnd.apple.mpegurl", shaka.hls.HlsParser);
-    shaka.media.ManifestParser.registerParserByMime("application/x-mpegURL", shaka.hls.HlsParser);
 
-
-    let player = new shaka.Player(this.videoElement);
 
 //# sourceURL=pen.js
     </script>
