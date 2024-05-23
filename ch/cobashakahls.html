@@ -92,7 +92,13 @@ font-family: Arial,Helvetica,sans-serif; font-size: 15px; font-weight: 701; colo
       <script id="rendered-js" >
 document.addEventListener('shaka-ui-loaded', init);
 document.addEventListener('shaka-ui-load-failed', initFailed);
-
+ player.configure({
+  drm: {
+    clearKeys: {
+      '3e999e38253834baa63881ea451f2839': '99b88d9cde1d8986decbc5985da87187'
+    }
+  }
+});
 async function init() {
   const video = document.getElementById('video');
   if (video && video.ui) {// Check if the UI has been set up, first.
@@ -104,13 +110,7 @@ async function init() {
     }, 5500));
     console.log(stats); // Or format this into DOM, etc.
   }
- player.configure({
-  drm: {
-    clearKeys: {
-      '3e999e38253834baa63881ea451f2839': '99b88d9cde1d8986decbc5985da87187'
-    }
-  }
-});
+
   controls.addEventListener('error', onPlayerErrorEvent);
 
 
