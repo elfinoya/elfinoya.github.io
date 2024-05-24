@@ -103,8 +103,7 @@ document.oncontextmenu = redirectKK;
   <script>
         var id = J_get('star');
     var dp=new DPlayer({container: document.getElementById('playsport'),theme:"#ffffff",loop:false,autoplay:false,hotkey:true, preload:"metadata", mutex:true, video: { quality: [{ url: ""+id+"","name":"BEJO TV - LIVE", type: 'auto', }, ], defaultQuality: 0, 
-	          pic: '', 
-			  thumbnails: 'https://i.imgur.com/j2qTmcp.jpg',referrerPolicy:"no-referrer"},}); 
+	          pic: 'https://i.imgur.com/j2qTmcp.jpg',referrerPolicy:"no-referrer"},}); 
    document.getElementById('playsport').oncontextmenu = function () {
             document.querySelector('.dplayer-menu').style.display = "none";
             document.querySelector('.dplayer-mask').style.display = "none";
