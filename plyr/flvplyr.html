@@ -23,7 +23,48 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/elfinoya/bejo@main/jwstyle.css"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/NaughtyJoker29/code/tele.css"/>
+<style>
+  body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Para ocultar barras de desplazamiento */
+  }
 
+  #player-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black; /* Fondo negro para el reproductor */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1; /* Para estar por encima del reproductor */
+  }
+
+  #player {
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 0; /* Atrás del botón */
+  }
+
+  #unmute-btn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      opacity: 0.8;
+      font-weight: 700;
+      font-family: sans-serif;
+      z-index: 2; /* Para estar delante del reproductor */
+  }
+</style>
 
 
 <script type='text/javascript'>
