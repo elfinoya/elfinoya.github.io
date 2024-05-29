@@ -8,7 +8,7 @@
     <meta name="referrer" content="no-referrer" />
     <meta name="robots" content="noindex, nofollow">
     <script src="https://cdn.jsdelivr.net/gh/DIYgod/DPlayer@master/dist/DPlayer.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.8/hls.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flv.js/1.6.2/flv.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/habotv/player@master/playplus.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/habotv/player@master/hlsplus.min.js"></script>
@@ -17,7 +17,7 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/shaka-player/4.4.1/shaka-player.compiled.debug.externs.min.js"></script>
   </head>
   <body>
-    <div id="dplayer" style="width:100%;height:250px"></div>
+    <div id="dplayer" style="width:100%;height:100%"></div>
     <script>
       const dplayer = new DPlayer({
         container: document.getElementById('dplayer'),theme:"#ffffff",loop:true,autoplay:true,hotkey:true, preload:"metadata", mutex:true,
