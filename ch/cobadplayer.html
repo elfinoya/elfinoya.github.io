@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/gh/habotv/player@master/hlsplus.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/habotv/player@master/playflv.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/dashjs/4.7.4/dash.all.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/shaka-player/4.4.1/shaka-player.compiled.debug.externs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.8.7/shaka-player.compiled.debug.externs.min.js"></script>
   </head>
   <body>
     <div id="dplayer" style="width:100%;height:100%"></div>
@@ -35,17 +35,20 @@
       }
    </script> 
     <script>
-      var id = J_get('link');
-      var dp = new DPlayer({
-        container: document.getElementById('dplayer'),theme:"#ffffff",loop:true,autoplay:true,hotkey:true, preload:"metadata", mutex:true,
-        live: true,
-        screenshot: true,
-        playbackSpeed: [0.5, 1, 1.5, 2],
-        video: { quality: [{name:'BEJO TV', type: 'auto', }, ], defaultQuality: 0,
-          pic: "https://i.imgur.com/j2qTmcp.jpg",
-          url: "https://node1.olelive.com:6443/live/CCTV5PHD/hls.m3u8",
-        }
-      });
-    </script>
-  </body>
+     var id = J_get('link');
+    var dp=new DPlayer({container: document.getElementById('playsport'),theme:"#ffffff",loop:true,autoplay:false,hotkey:true, preload:"metadata", mutex:true, video: { quality: [{ url: ""+id+"","name":"BEJO TV", type: 'auto', }, ], defaultQuality: 0, 
+	          pic: 'https://i.imgur.com/j2qTmcp.jpg', 
+			  thumbnails: '',referrerPolicy:"no-referrer"},}); 
+   document.getElementById('playsport').oncontextmenu = function () {
+            document.querySelector('.dplayer-menu').style.display = "none";
+            document.querySelector('.dplayer-mask').style.display = "none";
+    return false;
+    };
+    setTimeout(function(){dp.play();},1000);
+</script>
+<script type='text/javascript'>
+eval(function(p,a,c,k,e,d){e=function(c){
+return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('(3(){(3 a(){8{(3 b(2){7((\'\'+(2/2)).6!==1||2%5===0){(3(){}).9(\'4\')()}c{4}b(++2)})(0)}d(e){g(a,f)}})()})();',17,17,'||i|function|debugger|20|length|if|try|constructor|||else|catch||5000|setTimeout'.split('|'),0,{}))
+</script>
+</body>
 </html>
