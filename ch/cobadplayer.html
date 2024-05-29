@@ -24,31 +24,37 @@
     <div id="dplayer" style="width:100%;height:100%"></div>
     <script>
       const dplayer = new DPlayer({
-        container: document.getElementById('dplayer'),theme:"#ffffff",loop:true,autoplay:true,hotkey:true, preload:"metadata", mute:true,
+        container: document.getElementById('dplayer'),
+        theme: "#ffffff",
+        loop: true,
+        autoplay: true,
+        hotkey: true,
+        preload: "metadata",
+        mute: true,
         live: true,
         screenshot: true,
         playbackSpeed: [0.5, 1, 1.5, 2],
-         video: {
-        quality: [{
-             pic:"",
+        video: {
+          quality: [{
+            pic: "",
             name: '360p only',
-          url: "https://node1.olelive.com:6443/live/CCTV5PHD/hls.m3u8"
-        },{
+            url: "https://node1.olelive.com:6443/live/CCTV5PHD/hls.m3u8"
+          }, {
             name: '720p',
             url: "https://node1.olelive.com:6443/live/CCTV5PHD/hls.m3u8"
-        }],
-        defaultQuality: 1
-    },
-    danmaku: { // Optional, showing danmaku, ignore this option to hide danmaku
-        //id: '9E2E3368B56CDBB4',
-        id: 'jac-animation-net', // Required, danmaku id, NOTICE: it must be unique, can not use these in your new player: `https://api.prprpr.me/dplayer/list`
-        api: 'https://api.prprpr.me/dplayer/', // Required, danmaku api
-        token: 'tokendemo', // Optional, danmaku token for api
-        maximum: 1000, // Optional, maximum quantity of danmaku
-        user: 'DIYgod' // Optional, current user's name, default: 'DIYgod'
-    },
-  contextmenu: []
-});
-  </script>
+          }],
+          defaultQuality: 1
+        },
+        danmaku: { // Optional, showing danmaku, ignore this option to hide danmaku
+          //id: '9E2E3368B56CDBB4',
+          id: 'jac-animation-net', // Required, danmaku id, NOTICE: it must be unique, can not use these in your new player: `https://api.prprpr.me/dplayer/list`
+          api: 'https://api.prprpr.me/dplayer/', // Required, danmaku api
+          token: 'tokendemo', // Optional, danmaku token for api
+          maximum: 1000, // Optional, maximum quantity of danmaku
+          user: 'DIYgod' // Optional, current user's name, default: 'DIYgod'
+        },
+        contextmenu: []
+      });
+    </script>
   </body>
 </html>
