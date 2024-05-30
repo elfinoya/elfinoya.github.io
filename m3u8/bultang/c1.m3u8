@@ -1,4 +1,4 @@
 #EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=3000000
-http://116.153.46.92/play.cbalive.weibisai.com/live/3592170636787061_AiSD.m3u8?txSecret=b169c1941b5db1ef1d9e8634459ff6bd&txTime=66591300
+https://cors-proxy.elfsight.com/http://116.153.46.92/play.cbalive.weibisai.com/live/3592170636787061_AiSD.m3u8?txSecret=b169c1941b5db1ef1d9e8634459ff6bd&txTime=66591300
