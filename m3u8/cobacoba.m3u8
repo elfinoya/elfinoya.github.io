@@ -4,8 +4,8 @@
 
 #EXT-X-TARGETDURATION:4
 #EXTINF:4,
-http://starshare.live:8080/live/rvdgdf7647564/bvchgfd235454/5480.ts
+https://cors-proxy.elfsight.com/starshare.live:8080/live/rvdgdf7647564/bvchgfd235454/5480.ts
 #EXTINF:4,
-http://starshare.live:8080/live/rvdgdf7647564/bvchgfd235454/5480.ts
+https://cors-proxy.elfsight.com/http://starshare.live:8080/live/rvdgdf7647564/bvchgfd235454/5480.ts
 #EXTINF:4,
-http://starshare.live:8080/live/rvdgdf7647564/bvchgfd235454/5480.ts
+https://cors-proxy.elfsight.com/http://starshare.live:8080/live/rvdgdf7647564/bvchgfd235454/5480.ts
