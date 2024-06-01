@@ -1,0 +1,85 @@
+
+<html lang="es">
+  <title>Flipax.es | DAZN 1 ES</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="title" content="DAZN 1 GRATIS - Flipax.es">
+<meta name="description" content="Ver DAZN 1 completamente gratis">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="keywords" content="DAZN 1 GRATIS - Flipax.es">
+<meta name="og:title" content="DAZN 1 GRATIS - Flipax.es">
+<meta name="og:url" content="https://dazn1.foroactivo.com/h3-dazn-1-esp">
+<meta name="og:type" content="article">
+<meta name="og:site_name" content="Flipax.es">
+<meta name="og:description" content="Ver DAZN 1 completamente gratis">
+<meta name="og:image" content="https://i.servimg.com/u/f32/19/80/06/53/dazn_111.png">
+<meta name="og:image:width" content="1200">
+<meta name="og:image:height" content="613">
+<meta name="article:publisher" content="https://www.facebook.com/">
+<meta name="article:tag" content="DAZN 1 GRATIS - Flipax.es">
+<meta name="article:published_time" content="2023-03-19T13:29:59+01:00">
+<meta name="article:modified_time" content="2023-03-19T13:29:59+01:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://dazn1.foroactivo.com/h3-dazn-1-esp">
+<meta name="twitter:title" content="DAZN 1 GRATIS - Flipax.es">
+<meta name="twitter:description" content="Ver DAZN 1 completamente gratis">
+<meta name="twitter:site" content="@FlipaxN"><meta name="twitter:image" content="https://i.servimg.com/u/f32/19/80/06/53/dazn_111.png">
+<link rel="shortcut icon" type="image/x-icon" href="https://i.postimg.cc/02Knz5yx/flipax1.png"/><div id='identif19'></div>
+<style>
+body {
+  background-color: black;
+}
+</style>
+<head>
+<meta name="robots" content="noindex" />
+<script src="//cdn.jsdelivr.net/npm/@clappr/player@0.4.0/dist/clappr.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/mux.js@5.6.7/dist/mux.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/clappr-pip@latest/dist/clappr-pip.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/clappr-playback-rate-plugin@latest/dist/clappr-playback-rate-plugin.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/shaka-player@2.5.10/dist/shaka-player.compiled.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.external.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/cdnbye-shaka@latest"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<style> 
+  
+  .player-poster[data-poster] {
+    background-size: cover;
+  }
+  body{
+    margin:0;
+    padding:0;
+  }
+  
+  </style>
+</head>
+  <div id="player"></div>
+<script>
+  var player = new Clappr.Player({
+          source: 'https://nestomartllc.store/live/abr_ch1/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ni8xLzIwMjQgMTo1NzozNCBQTSZoYXNoX3ZhbHVlPWhhY09waUIyZ1B0NlBmR2lHa0UzRmc9PSZ2YWxpZG1pbnV0ZXM9NzIwJmlkPTE4MC4yNDkuMTUxLjU0JnN0cm1fbGVuPTU=',
+          mimeType: 'application/vnd.apple.mpegurl',
+          height: '100%',
+          width: '100%',
+          autoPlay: true,
+          plugins: [LevelSelector, DashShakaPlayback, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, Clappr.MediaControl],
+          events: {onReady: function() {var plugin = this.getPlugin('click_to_pause'); plugin && plugin.disable();},},
+          chromecast: {
+              appId: '9DFB77C0',
+              contentType: 'video/mp4',
+          },
+          shakaConfiguration: {
+            drm: {
+                "clearKeys": {
+					"44dd9cd370b08a868ead115fe84ecfde": "bff19ab0a51cf14e848389b152913fd0",	
+                  }
+              },
+          },
+          shakaOnBeforeLoad: function (shaka_player) {},
+          parentId: '#player'
+      });
+  </script>
+  <script type="text/javascript">
+	document.oncontextmenu = function(){return false}
+</script>
