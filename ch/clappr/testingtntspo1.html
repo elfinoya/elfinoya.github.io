@@ -57,29 +57,26 @@ body {
 </head>
   <div id="player"></div>
 <script>
-  var player = new Clappr.Player({
-          source: 'https://nestomartllc.store/live/abr_ch1/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ni8xLzIwMjQgMTo1NzozNCBQTSZoYXNoX3ZhbHVlPWhhY09waUIyZ1B0NlBmR2lHa0UzRmc9PSZ2YWxpZG1pbnV0ZXM9NzIwJmlkPTE4MC4yNDkuMTUxLjU0JnN0cm1fbGVuPTU=',
-          mimeType: 'application/vnd.apple.mpegurl',
-          height: '100%',
-          width: '100%',
-          autoPlay: true,
-          plugins: [LevelSelector, DashShakaPlayback, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, Clappr.MediaControl],
-          events: {onReady: function() {var plugin = this.getPlugin('click_to_pause'); plugin && plugin.disable();},},
-          chromecast: {
-              appId: '9DFB77C0',
-              contentType: 'video/mp4',
-          },
-          shakaConfiguration: {
-            drm: {
-                "clearKeys": {
-					"44dd9cd370b08a868ead115fe84ecfde": "bff19ab0a51cf14e848389b152913fd0",	
-                  }
-              },
-          },
-          shakaOnBeforeLoad: function (shaka_player) {},
-          parentId: '#player'
-      });
-  </script>
+var playerElement = document.getElementById("player");
+var player = new Clappr.Player({
+height: "100%",
+width: "100%",
+mediacontrol: {seekbar: "#f707db", buttons: "#f707db"},
+autoPlay: true,
+plugins: {
+'core': [LevelSelector, ]
+},
+hlsjsConfig: {
+xhrSetup: function(xhr, url) {
+xhr.withCredentials = false;
+}
+}
+});
+player.attachTo(playerElement);
+player.load({source: 'https://nestomartllc.store/live/abr_ch1/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ni8xLzIwMjQgMTo1NzozNCBQTSZoYXNoX3ZhbHVlPWhhY09waUIyZ1B0NlBmR2lHa0UzRmc9PSZ2YWxpZG1pbnV0ZXM9NzIwJmlkPTE4MC4yNDkuMTUxLjU0JnN0cm1fbGVuPTU=', 
+mimeType: 'application/vnd.apple.mpegurl'});
+player.play();
+</script>
   <script type="text/javascript">
 	document.oncontextmenu = function(){return false}
 </script>
