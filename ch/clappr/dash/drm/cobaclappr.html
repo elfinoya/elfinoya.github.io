@@ -60,21 +60,22 @@
   }
 
   #unmute-btn {
-      position: absolute;
-      top: 8px;
-      left: 16px;
-      width: 20%;
-      height: 20%;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 18px;
-      opacity: 5.0;
-      font-weight: 700;
-      font-family: sans-serif;
-      color: Red;
-      z-index: 1; /* Para estar delante del reproductor */
-  }
+      display:none;
+      z-index:2;
+      color:#fff;
+      position:absolute;
+      top:40px;
+      left:40px;
+      width:200px;
+      border:2px solid #fff;
+      text-align:center;
+      padding:4px 0;
+      border-radius:2px;
+      cursor:pointer;
+      opacity:.8
+}
+#unmute-btn:hover{opacity:1}
+
  .overlay a{ list-style-type:none; text-decoration:none;}
 .overlay h1 {position: absolute; bottom:0px; left:10%; z-index: 1;
 font-family: Arial,Helvetica,sans-serif; font-size: 15px; font-weight: 701; color: #0FFF00;}
