@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html data-theme="dark" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr">
 <head>
 <script src="/cdn-cgi/apps/head/aqhzBqkyhgXFT9tYquvCBE2xpuY.js"></script>
@@ -68,7 +68,7 @@
 			playerInstance = jwplayer("player");
 						playerInstance.setup({
 				playlist: [{
-					"title": "FIFA Plus [CH2] - Duktek TV",
+					"title": "PIPA Plus",
 					"sources": [
 						{
 							"default": false,                            
@@ -83,12 +83,23 @@
 				aspectratio: "16:9",
 				autostart: false,
 				logo: {
-					file: '/engine/pwa/img/duktek-sports.png',
-					link: 'https://nobar-bola.duktek.online/sports/tv-online',
+					file: '',
+					link: '',
 					position: 'top-right',
 					hide: "false"
 				},
 				cast:{},
+				 "advertising": {
+    "autoplayadsmuted": "true",
+    "client": "vast",
+    "adscheduleid": "Ez32aB68",
+    "schedule": [
+      {
+        "offset": 1,
+        "tag": "https://instructive-glass.com/dPm.F/zDdEGONJvbZ/G/Uc/veWmZ9OuFZfU/lakKP/T/UazSMDDGgZ1BNKT/k/tMNRT/MFwFOvD-UU2uM/A-"
+      }
+    ]
+  },			
 				sharing: {
 					"sites": ["reddit", "facebook", "twitter"]
 				},
