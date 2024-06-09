@@ -51,17 +51,7 @@
 <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
 	
-var domain = document.referrer;
-  var allowDomain ="ikotv.sbs";
-  console.log(domain);
-  if (domain.includes(allowDomain) || domain.includes('liveskortv') || domain.includes('ikotv')) {
-    console.log("allow to play");
-  } else {
-    window.location.href = "https://ikotv.sbs";
-    window.location.replace("https://ikotv.sbs");
-    document.getElementById("app").innerHTML = "";
-    console.log("allow to play");
-  }
+
    
 
   const urlParams = new URLSearchParams(window.location.search);
