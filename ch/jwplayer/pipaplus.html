@@ -129,6 +129,55 @@
 					}
 				}
 			});
+
+	
+        </script>
+<style>
+        .jw-slider-horizontal {
+            display: none;
+        }
+        .jw-icon-rewind {
+            display: none;
+        }
+</style>
+<script>
+function WSUnmute() {
+document.getElementById("UnMutePlayer").style.display="none";
+embedPlayer = false;
+jwplayer().setMute(false);
+}
+var xt = 0;
+    jwplayer().on('error', function(e) {
+if (xt > 2) {
+xt = 0;
+jwplayer().load({file:"https://voodc.com/error.mp4"});
+}else{
+jwplayer().load();
+jwplayer().stop();
+xt++;
+}
+    });
+jwplayer().on('mute', function(e) {
+if (jwplayer().getMute() == false) {
+document.getElementById("UnMutePlayer").style.display="none";
+embedPlayer = false;
+}else{
+document.getElementById("UnMutePlayer").style.display="";
+embedPlayer = true;
+}
+});
+jwplayer().on('complete', function(){
+jwplayer().load({file:"https://6d42a49f.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/U2Ftc3VuZy1pdF9GSUZBUGx1c19ITFM/playlist.m3u8"});
+});
+
+jwplayer().on('play', function(){
+if (jwplayer().getMute() == false) { document.getElementById("UnMutePlayer").style.display="none"; embedPlayer = false; }
+});
+
+
+</script>
+<div id="UnMutePlayer" style="position: absolute; left: 12px; top: 7px; width: 250px; height: 45px; visibility: visible;"> <button class="UnMute" onclick="WSUnmute()">CLICK TO
+UNMUTE PLAYER</button></div>
 					</script>
 </div>
 </div>
