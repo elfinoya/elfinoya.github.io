@@ -21,6 +21,7 @@
 <script src="https://xadavm.github.io/wefvhiwsevhddsj/claprrr.js"></script>
 <script src="https://xadavm.github.io/wefvhiwsevhddsj/mux.min.js"></script>
 <script src='https://xadavm.github.io/wefvhiwsevhddsj/level-selector.min.js'></script>
+<script src="https://raw.githack.com/elfinoya/assetbjo/main/clappr.ads.js" type="text/javascript"></script>
 <script src='https://xadavm.github.io/wefvhiwsevhddsj/clappr-chromecast-plugin.min.js'></script>
 <script src='https://xadavm.github.io/wefvhiwsevhddsj/clappr-pip.min.js'></script>
 <script src='https://xadavm.github.io/wefvhiwsevhddsj/clappr-playback-rate-plugin.min.js'></script>
@@ -129,7 +130,7 @@ ConsoleBan.init({
       source: window.atob("aHR0cHM6Ly9kYS1kNTBkMTJiNS5vbmxpbmUubWVvLnB0L3dwL2Nkbi1lci12c3BwLWN2bDIub25saW5lLm1lby5wdC9zaGxzL0xJVkUkU1BPUlRUVjJfSEQvaW5kZXgubTN1OC9TIWQyRUdTVTlUWDBkaEVnWlUudi4uLndFV0RKOF8vTGV2ZWwoNTI0Mjg4MCk="),
       mimeType: 'application/x-mpegURL',
       poster: '//i.imgur.com/j2qTmcp.jpg',
-      plugins:  [DashShakaPlayback,LevelSelector ],
+      plugins:  [DashShakaPlayback,ClapprAds,LevelSelector ],
       shakaConfiguration: {
             drm: {
       clearKeys: {
@@ -146,6 +147,14 @@ ConsoleBan.init({
           },
       height: '100%',
       width: '100%',
+      ads: { preRoll: {
+            src: ['https://www.w3schools.com/html/mov_bbb.mp4'],
+            skip: true,
+            timeout: 7
+	   
+        }
+	     	},
+     
       watermark: 'https://raw.githubusercontent.com/elfinoya/assetbjo/main/Bejo-TVx.png',
       title: 'CECETEPELIMA',
       autoPlay: true, // Set autoplay (with capital 'P')
