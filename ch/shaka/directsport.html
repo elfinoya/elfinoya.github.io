@@ -39,15 +39,15 @@ const ui = video['ui'];
 const controls = ui.getControls(); 
 const player = controls.getPlayer(); 
 const licenseServer = 'https://cwip-shaka-proxy.appspot.com/header_auth';
-//player.configure({
-// drm: {
-//    clearKeys: {
+player.configure({
+ drm: {
+    clearKeys: {
       // 'key-id-in-hex': 'key-in-hex',
-//      '000540adbb30871d80550825b28bc4c3': '402edc50e9288aadc551bceaf347a517' 
-//    }
-//  }
-// });
-player.configure({drm:{servers:{'com.widevine.alpha':'https://mrpw.ptmnc01.verspective.net/?deviceId=NzEwNGYwNjEtNzBjNC0zNmJjLTkwZGMtMGQ1Yjg3ZWJhZTBi'}}}); 
+      'fadd2720deff5925ab86df0819cd7775': 'f67ff08c7ebc779f6a6fcfc83835f65b' 
+    }
+  }
+ });
+// player.configure({drm:{servers:{'com.widevine.alpha':'https://mrpw.ptmnc01.verspective.net/?deviceId=NzEwNGYwNjEtNzBjNC0zNmJjLTkwZGMtMGQ1Yjg3ZWJhZTBi'}}}); 
 window.player = player; 
 window.ui = ui; 
 player.addEventListener('error', onPlayerErrorEvent); 
