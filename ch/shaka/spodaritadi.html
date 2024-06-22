@@ -15,7 +15,7 @@
 <meta content='https://raw.githack.com/elfinoya/assetbjo/main/favicon.png' name='msapplication-TileImage'/>
 <meta content='#393a3f' name='msapplication-TileColor'/>
 <link href='https://raw.githack.com/elfinoya/assetbjo/main/favicon.ico' rel='icon'/>
-<title>BEJO TV | TNTSPOTIG</title>
+<title>BEJO TV | SPODARITADI</title>
 <script src='//steamabundanceslope.com/16/55/cf/1655cf79759e97eb419b221c3dbf85bf.js' type='text/javascript'></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async='async' src='https://www.googletagmanager.com/gtag/js?id=G-WSH7DWTPLD'></script>
@@ -40,20 +40,20 @@ const ui = video['ui'];
 const controls = ui.getControls(); 
 const player = controls.getPlayer(); 
 const licenseServer = 'https://cwip-shaka-proxy.appspot.com/header_auth';
-//player.configure({
- //drm: {
- //   clearKeys: {
+player.configure({
+ drm: {
+    clearKeys: {
       // 'key-id-in-hex': 'key-in-hex',
-  //    'fadd2720deff5925ab86df0819cd7775': 'f67ff08c7ebc779f6a6fcfc83835f65b' 
-  //  }
-  // }
- // });
+      'e7c650ac72dcd0311411832a8271bb10': '1b144f73e6fefe91cd05f850e2b589d0' 
+    }
+   }
+  });
 // player.configure({drm:{servers:{'com.widevine.alpha':'https://mrpw.ptmnc01.verspective.net/?deviceId=NzEwNGYwNjEtNzBjNC0zNmJjLTkwZGMtMGQ1Yjg3ZWJhZTBi'}}}); 
 window.player = player; 
 window.ui = ui; 
 player.addEventListener('error', onPlayerErrorEvent); 
 controls.addEventListener('error', onUIErrorEvent); 
-try{await player.load('https://testfunctionlive.mncnow.id/live/eds/MNCSports3-HD/sa_dash_vmx/MNCSports3-HD.mpd'); 
+try{await player.load('https://testerus.starlive.workers.dev/dash-wv/linear/5148/default.mpd'); 
 console.log('The video has now been loaded!');} catch (error) {onPlayerError(error);}} 
 function onPlayerErrorEvent(errorEvent) {onPlayerError(event.detail);} 
 function onPlayerError(error) {console.error('Error code', error.code, 'object', error);} 
