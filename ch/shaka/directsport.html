@@ -39,20 +39,20 @@ const ui = video['ui'];
 const controls = ui.getControls(); 
 const player = controls.getPlayer(); 
 const licenseServer = 'https://cwip-shaka-proxy.appspot.com/header_auth';
-player.configure({
- drm: {
-    clearKeys: {
+//player.configure({
+ //drm: {
+ //   clearKeys: {
       // 'key-id-in-hex': 'key-in-hex',
-      'fadd2720deff5925ab86df0819cd7775': 'f67ff08c7ebc779f6a6fcfc83835f65b' 
-    }
-  }
- });
+  //    'fadd2720deff5925ab86df0819cd7775': 'f67ff08c7ebc779f6a6fcfc83835f65b' 
+  //  }
+  // }
+ // });
 // player.configure({drm:{servers:{'com.widevine.alpha':'https://mrpw.ptmnc01.verspective.net/?deviceId=NzEwNGYwNjEtNzBjNC0zNmJjLTkwZGMtMGQ1Yjg3ZWJhZTBi'}}}); 
 window.player = player; 
 window.ui = ui; 
 player.addEventListener('error', onPlayerErrorEvent); 
 controls.addEventListener('error', onUIErrorEvent); 
-try{await player.load('https://dev.freemiumiptv.top/mnclokal/live/eds/MNCSports3-HD/sa_dash_vmx/MNCSports3-HD.mpd'); 
+try{await player.load('https://testfunctionlive.mncnow.id/live/eds/MNCSports3-HD/sa_dash_vmx/MNCSports3-HD.mpd'); 
 console.log('The video has now been loaded!');} catch (error) {onPlayerError(error);}} 
 function onPlayerErrorEvent(errorEvent) {onPlayerError(event.detail);} 
 function onPlayerError(error) {console.error('Error code', error.code, 'object', error);} 
