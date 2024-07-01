@@ -157,7 +157,15 @@ text-align: center;
 <div class='post hentry'><a name='1174184508215727811'></a><h1 class='entry-title'>CETIVI</h1>
 <div class='post-body entry-content'>
 
- <script>
+ <script language="javascript">
+    function dF(s) {
+      var s1 = unescape(s.substr(0, s.length - 1));
+      var t = '';
+      for (i = 0; i < s1.length; i++) t += String.fromCharCode(s1.charCodeAt(i) - s.substr(s.length - 1, 1));
+      document.write(unescape(t));
+    }
+  </script>
+  <script>
     function getParameterByName(name) {
       name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
       var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
@@ -166,12 +174,39 @@ text-align: center;
     }
     var gons = getParameterByName('ns');
   </script>
+  </script>
 <div class="xyz2">
-<div data-shaka-player-container="" class="fit shaka-video-container" shaka-controls="true" style=""><video autoplay="" autostart="false" data-shaka-player="" id="xyz2" poster="https://i.imgur.com/0FlZDic.jpeg" id="xyz2" style="width: 100vw; height: calc(var(--vh, 1vh) * 100);" class="shaka-video" src="" __idm_id__="2195457"></video>
+<div data-shaka-player-container="" class="fit shaka-video-container" shaka-controls="true" style=""><video autoplay="" autostart="false" data-shaka-player="" id="eu22" poster="https://i.imgur.com/0FlZDic.jpeg" id="xyz2" style="width: 100vw; height: calc(var(--vh, 1vh) * 100);" class="shaka-video" src="" __idm_id__="2195457"></video>
 </div></div>
 
+ <script>
+    // Function to get URL parameters
+    function getUrlParameter(name) {
+      name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+    // Get the value of the 'result' parameter from the URL
+    var newId = getUrlParameter('id');
+    // Check if the 'result' parameter exists and is not empty
+    if (newId) {
+      // Set the id attribute of the video element to the value of the 'result' parameter
+      document.getElementById('xystv').id = newId;
+    }
+  </script>
+  <script language="javascript">
+    function dF(s) {
+      var s1 = unescape(s.substr(0, s.length - 1));
+      var t = '';
+      for (i = 0; i < s1.length; i++) t += String.fromCharCode(s1.charCodeAt(i) - s.substr(s.length - 1, 1));
+      document.write(unescape(t));
+    }
+  </script>
+  <script src="https://mumunin.github.io/auah/jajan.js"></script>
+
 <script type="text/javascript">
-const xyz2_manifestUri = 'https://pe-fa-lp01a.9c9media.com/live/CFTO/p/dash/20000001/9117ec94ec99c195/manifest.mpd';
+const xyz2_manifestUri = 'link';
 async function init() {
   const video = document.getElementById('xyz2');
     const ui = video['ui'];
