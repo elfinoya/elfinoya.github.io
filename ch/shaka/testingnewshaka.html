@@ -164,14 +164,21 @@ text-align: center;
       document.write(unescape(t));
     }
   </script>
-  <script>
-    function getParameterByName(name) {
-      name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
-      var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+ <script>
+    // Function to get URL parameters
+    function getUrlParameter(name) {
+      name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+    // Get the value of the 'result' parameter from the URL
+    var newId = getUrlParameter('id');
+    // Check if the 'result' parameter exists and is not empty
+    if (newId) {
+      // Set the id attribute of the video element to the value of the 'result' parameter
+      document.getElementById('xystv').id = newId;
     }
-    var gons = getParameterByName('ns');
   </script>
 
 <div id="vidio" class="fit shaka-video-container" data-shaka-player-container="" style="position: absolute; z-index: -1; top: 0px; left: 0px; width: 100%; height: 100%;" shaka-controls="true">
