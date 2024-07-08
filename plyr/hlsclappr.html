@@ -14,10 +14,15 @@
        <script src="https://cdn.jsdelivr.net/clappr.pip-plugin/latest/clappr-pip-plugin.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/dash-shaka-playback/1.0.0/dash-shaka-playback.js"></script>
    </head>
-   <body bgcolor="black" style="margin:0">
-      <div id="player"></div>
-            <script>
-         var str ="";
+<body bgcolor="black" style="margin:0">
+<div id="player"></div>
+<script>
+function get(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");
+var n="[\\?$]"+e+"=([^$#]*)",
+l=new RegExp(n),
+c=l.exec(window.location.href);
+return null==c?"/nature.mp4":unescape(c[1])}
+         var str =get("url");;
          window.onload = function() {
              var player = new Clappr.Player({
                  source: str,
