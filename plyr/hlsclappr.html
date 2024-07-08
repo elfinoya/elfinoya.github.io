@@ -22,10 +22,9 @@ var n="[\\?$]"+e+"=([^$#]*)",
 l=new RegExp(n),
 c=l.exec(window.location.href);
 return null==c?"/nature.mp4":unescape(c[1])}
-         var str =get("url");;
-         window.onload = function() {
-             var player = new Clappr.Player({
-                 source: str,
+var str =get("url");
+             var player = new Clappr.Player(
+		{source: str,
                  parentId: "#player",
                  mimeType: "application/x-mpegURL",
                  plugins: [LevelSelector, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, DashShakaPlayback, Clappr.MediaControl,PlaybackRatePlugin],
