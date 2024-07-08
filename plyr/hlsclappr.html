@@ -1,0 +1,55 @@
+<html>
+   <head>
+      <meta name="theme-color" content="black">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <meta name="referrer" content="no-referrer">
+      <meta content="width=device-width, initial-scale=1" name="viewport">
+      <title></title>
+      
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/clappr/0.2.52/clappr.min.js"></script> -->
+	   <script type="text/javascript" src="http://hplayer.ggapk.net/tv_player/player/clappr/clappr.min.js"></script>
+		<script src="http://hplayer.ggapk.net/tv_player/player/clappr/level-selector.min.js"></script>
+       <script src="http://hplayer.ggapk.net/tv_player/player/clappr/clappr-chromecast-plugin.min.js"></script>
+       <script src="http://hplayer.ggapk.net/tv_player/player/clappr/clappr-pip.min.js"></script>
+       <script src="http://hplayer.ggapk.net/tv_player/player/clappr/clappr-playback-rate-plugin.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/dash-shaka-playback/1.0.0/dash-shaka-playback.js"></script>
+   </head>
+   <body bgcolor="black" style="margin:0">
+      <div id="player"></div>
+            <script>
+         var str ="";
+         window.onload = function() {
+             var player = new Clappr.Player({
+                 source: str,
+                 parentId: "#player",
+                 mimeType: "application/x-mpegURL",
+                 plugins: [LevelSelector, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, DashShakaPlayback, Clappr.MediaControl,PlaybackRatePlugin],
+                 events: {onReady: function() {var plugin = this.getPlugin("click_to_pause"); plugin && plugin.disable();},},
+                 height: "100%",
+                 width: "100%",
+                 autoPlay: true,                 
+                 crossOrigin: "anonymous",
+                 shakaConfiguration: {
+                 manifest: {retryParameters: {maxAttempts: Infinity}},
+                 streaming: {retryParameters: {maxAttempts: Infinity}},
+                 drm: {retryParameters: {maxAttempts: Infinity}},
+                 },
+                 playbackRateConfig: {
+                 defaultValue: "1.00x",
+                 options: [
+                 {value: "0.10", label: "0.10x"},
+                 {value: "0.25", label: "0.25x"},
+                 {value: "0.50", label: "0.50x"},
+                 {value: "0.75", label: "0.75x"},
+                 {value: "1.00", label: "1.00x"},
+                 {value: "1.25", label: "1.25x"},
+                 {value: "1.50", label: "1.50x"},
+                 {value: "1.75", label: "1.75x"},
+                 {value: "2.00", label: "2.00x"},
+                 ]
+                 },
+             });
+         };
+      </script>
+   </body>
+</html>
