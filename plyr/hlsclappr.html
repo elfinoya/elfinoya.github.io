@@ -23,37 +23,26 @@ l=new RegExp(n),
 c=l.exec(window.location.href);
 return null==c?"/nature.mp4":unescape(c[1])}
 var str =get("url");
-             var player = new Clappr.Player(
-		{source: str,
-                 parentId: "#player",
-                 mimeType: "application/x-mpegURL",
-                 plugins: [LevelSelector, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, DashShakaPlayback, Clappr.MediaControl,PlaybackRatePlugin],
-                 events: {onReady: function() {var plugin = this.getPlugin("click_to_pause"); plugin && plugin.disable();},},
-                 height: "100%",
-                 width: "100%",
-                 autoPlay: true,                 
-                 crossOrigin: "anonymous",
-                 shakaConfiguration: {
-                 manifest: {retryParameters: {maxAttempts: Infinity}},
-                 streaming: {retryParameters: {maxAttempts: Infinity}},
-                 drm: {retryParameters: {maxAttempts: Infinity}},
-                 },
-                 playbackRateConfig: {
-                 defaultValue: "1.00x",
-                 options: [
-                 {value: "0.10", label: "0.10x"},
-                 {value: "0.25", label: "0.25x"},
-                 {value: "0.50", label: "0.50x"},
-                 {value: "0.75", label: "0.75x"},
-                 {value: "1.00", label: "1.00x"},
-                 {value: "1.25", label: "1.25x"},
-                 {value: "1.50", label: "1.50x"},
-                 {value: "1.75", label: "1.75x"},
-                 {value: "2.00", label: "2.00x"},
-                 ]
-                 },
-             });
-         };
-      </script>
+var player = new Clappr.Player(
+{source:url,
+poster: '//i.imgur.com/j2qTmcp.jpg',
+plugins:  [DashShakaPlayback, ClapprAds, LevelSelector],
+          shakaConfiguration: {
+            preferredAudioLanguage: 'pt-BR',
+            streaming: {
+              rebufferingGoal: 15
+            }
+          },
+          shakaOnBeforeLoad: function(shaka_player) {
+            // shaka_player.getNetworkingEngine().registerRequestFilter() ...
+          },
+		     
+watermark: 'https://raw.githubusercontent.com/elfinoya/assetbjo/main/Bejo-TVx.png',
+autoPlay:true,
+height:"100%",
+width:"100%",
+parentId: "#player",
+mediacontrol: {seekbar: "#ff1d04", buttons: "#ff1d04"},});
+</script>
    </body>
 </html>
