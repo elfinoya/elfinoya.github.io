@@ -42,6 +42,15 @@
 			<span class="ch" data-frame="https://elfinoya.github.io/plyr/dashplyr.html?url=https://skytest.starlive.workers.dev/https://linear001-ie-dash1-prd-cf.cdn.skycdp.com/016a/Content/DASH_003_720_120/Live/channel(premiersports1)/manifest_720.mpd&keyId=0005b3dba78ae0fe7a9288022d3b3736&key=d2827df80dd7e9243ba6b5bbda5dfa82">CH 2</span>
 			
 		</div>
+
+		<script>
+			$('.ch').off('click').on('click', function(){
+					var _dataFrame = $(this).attr('data-frame');
+					$('.ch').removeClass('active');
+					$(this).addClass('active');
+					$('#main_frame').attr('src', _dataFrame);
+			});
+		</script>
 		
 		<!--<script type='text/javascript' src='https://spokentomatoestraumatic.com/5d/8a/b2/5d8ab274e4a12ef6e4b013f765c28d3c.js'></script>-->
 	</body>
