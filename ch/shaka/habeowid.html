@@ -46,12 +46,12 @@ const player = controls.getPlayer();
 //    }
 // }
 //});
-player.configure({drm:{servers:{'com.widevine.alpha':'https://lic.drmtoday.com/license-proxy-widevine/cenc/?specConform=true'}}}); 
+player.configure({drm:{servers:{'com.widevine.alpha':'https://lic-cubmux.konslet.workers.dev/4rr0w/play.wv'}}}); 
 window.player = player; 
 window.ui = ui; 
 player.addEventListener('error', onPlayerErrorEvent); 
 controls.addEventListener('error', onUIErrorEvent); 
-try{await player.load('https://acong.freemiumiptv.top/gdp/cubmu/live/master/3/4028c6856b6088c3016b87d64b970b53/manifest.mpd?token=WjkvMWdHWkp5aCs3bUMyVUhxcUJ1aWwrZ2JkV3I4dVV6dGJPQlNKMG1rN0VydzRydWw1NldhTkFyNmpkSVQ4bTo63S7poxorHi6P2VIYDYrqnQ%3D%3D'); 
+try{await player.load('https://proxy.tsuchikage.my.id/https://cdnjkt4.transvision.co.id:1000/live/master/4/4028c6856b6088c3016b87d64b970b53/manifest.mpd'); 
 console.log('The video has now been loaded!');} catch (error) {onPlayerError(error);}} 
 function onPlayerErrorEvent(errorEvent) {onPlayerError(event.detail);} 
 function onPlayerError(error) {console.error('Error code', error.code, 'object', error);} 
