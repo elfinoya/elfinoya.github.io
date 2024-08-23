@@ -46,7 +46,7 @@ const player = controls.getPlayer();
 //    }
 // }
 //});
-player.configure({drm:{servers:{'com.widevine.alpha':'https://lic-cubmux.konslet.workers.dev/4rr0w/play.wv'}}}); 
+player.configure({drm:{servers:{'com.widevine.alpha':'https://lic.drmtoday.com/license-proxy-widevine/cenc/?specConform=true'}}}); 
 window.player = player; 
 window.ui = ui; 
 player.addEventListener('error', onPlayerErrorEvent); 
